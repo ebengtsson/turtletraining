@@ -1,1 +1,10 @@
+base <http://bibliotek.se/>
 
+prefix bf: <http://id.loc.gov/ontologies/bibframe/>
+prefix rdaco: <http://rdaregistry.info/termList/RDAContentType/>
+prefix rdamt: <http://rdaregistry.info/termList/RDAMediaType/>
+prefix rdact: <http://rdaregistry.info/termList/RDACarrierType/>
+
+
+</bok/alice-i-underlandet> a bf:Work ;
+  bf:title "Alice's adventures in Wonderland" ;
