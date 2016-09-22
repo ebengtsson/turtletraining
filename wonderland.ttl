@@ -4,7 +4,21 @@ prefix bf: <http://id.loc.gov/ontologies/bibframe/>
 prefix rdaco: <http://rdaregistry.info/termList/RDAContentType/>
 prefix rdamt: <http://rdaregistry.info/termList/RDAMediaType/>
 prefix rdact: <http://rdaregistry.info/termList/RDACarrierType/>
-
+prefix lcrel: <http://id.loc.gov/vocabulary/relators/>
+prefix kbmarc: <http:id.kb.se/marc/>
+prefix id: <http:id.kb.se/>
 
 </bok/alice-i-underlandet> a bf:Work ;
-  bf:title "Alice's adventures in Wonderland" ;
+
+  bf:title [a bf:WorkTitle ;
+            bf:mainTitle "Alice i underlandet"
+         ] ;
+
+  bf:contribution [ a bf:Contribution ;
+              bf:agent </person/åke-runnquist> ;
+              bf:role lcrel:trl 
+         ] ;
+ #lcrel:trl </person/åke-runnquist> ;
+ #lcrel:ill </person/åke-runnquist> ;
+
+bf:contributor <https://id.kb.se/auth/carroll-lewis> ;
