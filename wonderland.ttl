@@ -5,20 +5,36 @@ prefix rdaco: <http://rdaregistry.info/termList/RDAContentType/>
 prefix rdamt: <http://rdaregistry.info/termList/RDAMediaType/>
 prefix rdact: <http://rdaregistry.info/termList/RDACarrierType/>
 prefix lcrel: <http://id.loc.gov/vocabulary/relators/>
+prefix lclang: <http://id.loc.gov/vocabulary/languages/>
 prefix kbmarc: <http:id.kb.se/marc/>
 prefix id: <http:id.kb.se/>
 
-</bok/alice-i-underlandet> a bf:Work ;
+</work/alice-i-underlandet> a bf:Text ;
 
   bf:title [a bf:WorkTitle ;
             bf:mainTitle "Alice i underlandet"
          ] ;
 
   bf:contribution [ a bf:Contribution ;
-              bf:agent </person/åke-runnquist> ;
-              bf:role lcrel:trl 
+            bf:agent </person/åke-runnquist> ;
+            bf:role lcrel:trl 
          ] ;
  #lcrel:trl </person/åke-runnquist> ;
  #lcrel:ill </person/åke-runnquist> ;
 
-bf:contributor <https://id.kb.se/auth/carroll-lewis> ;
+  bf:language lclang:swe ;
+  bf:translationOf </work/alices-adventures-in-wonderland> .
+
+
+</work/alice-i-underlandet> a bf:Text ;
+ bf:title [a bf:WorkTitle ;
+            bf:mainTitle "Alice's adventures in wonderland"
+         ] ;
+ bf:contribution [ a bf:Contribution ;
+            bf:agent </person/lewis-carroll> ;
+            bf:role lcrel:aut 
+         ] ;
+  bf:language lclang:eng ;
+  bf:translation </bok/alice-i-underlandet> .
+
+</person/åke-runnquist> a bf:Person .
