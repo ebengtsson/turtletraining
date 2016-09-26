@@ -129,7 +129,96 @@ prefix id: <http:id.kb.se/>
   bf:expressionOf </work/alice-in-wonderland-screenplay-1951> ;
   bf:hasPart  </work/alice-in-wonderland-filmmusic-1951> .
 
+#Work - noterna till filmmusiken (instansen som idé)
 
+</work/alice-in-wonderland-sheetmusic-1951> a bf:NotatedMusic ;
+  bf:title [a bf:WorkTitle ;
+            bf:mainTitle "[Sheet music to the film Alice in Wonderland]"
+         ] ;
+ #bf:provisionActivity [a bf:Publication ;
+ #            bf:agent </organization/walt-disney-productions> ;
+ #            bf:role lcrel:pbl 
+ #            ] ;
+  bf:copyrightDate "1950"^^xsd:gYear ;
+  bf:hasPart </work/wallace-fein-alice-in-wonderland-comp> ;
+  bf:hasPart </work/wallace-fein-in-a-world-of-my-own-comp> .
+#osv. 
+#https://www.discogs.com/The-Chorus-And-Orchestra-Of-Camarata-Walt-Disneys-Alice-In-Wonderland/release/8110198
+
+#Work - noter till första melodin Alice in Wonderland 
+
+</work/wallace-fein-alice-in-wonderland-comp> a bf:NotatedMusic ;
+  bf:title [a bf:WorkTitle ;
+            bf:mainTitle "Alice in Wonderland"
+         ] ;
+  bf:contribution [ a bf:Contribution ;
+            bf:agent </person/oliver-wallace>, </person/sam-e-fein> ;
+            bf:role lcrel:cmp 
+         ] ;
+  bf:creationDate "1948"^^xsd:gYear ;
+  bf:partOf </work/alice-in-wonderland-sheetmusic-1951> ;
+  bf:hasExpression </work/alice-in-wonderland-rec-camarata> .
+
+
+#Work - noter till andra melodin In a world of my own
+
+</work/wallace-fein-in-a-world-of-my-own-comp>a bf:NotatedMusic ;
+  bf:title [a bf:WorkTitle ;
+            bf:mainTitle "In a world of my own"
+         ] ;
+  bf:contribution [ a bf:Contribution ;
+            bf:agent </person/oliver-wallace>, </person/sam-e-fein> ;
+            bf:role lcrel:cmp 
+         ] ;
+  bf:creationDate "1949"^^xsd:gYear ;
+  bf:partOf </work/alice-in-wonderland-sheetmusic-1951> ;
+  bf:hasExpression </work/in-a-world-of-my-own-rec-camarata> .
+
+
+#Work - inspelade filmmusiken till disneyfilmen 1951 (instansen som idé)
+
+</work/alice-in-wonderland-filmmusic-1951> a bf:Audio ;
+  bf:title [a bf:WorkTitle ;
+            bf:mainTitle "Walt Disney's Alice In Wonderland"
+         ] ;
+  bf:expressionOf </work/alice-in-wonderland-sheetmusic-1951> ;
+  bf:hasPart </work/alice-in-wonderland-rec-camarata> ;
+  bf:hasPart </work/in-a-world-of-my-own-rec-camarata> .
+#etc
+
+
+#Work - inspelning av A world of my own
+
+</work/in-a-world-of-my-own-rec-camarata> a bf:Audio ;
+  bf:title [a bf:WorkTitle ;
+            bf:mainTitle "A world of my own"
+         ] ;
+  bf:contribution [ a bf:Contribution ;
+            bf:agent </organization/toots-camarata-and-his-orchestra> ;
+            bf:role lcrel:sng, lcrel:mus  
+         ] ;
+ bf:contribution [ a bf:Contribution ;
+            bf:agent </person/darlene-gillespie> ;
+            bf:role lcrel:sng 
+         ] ;
+  bf:creationDate "1950"^^xsd:gYear ;
+  bf:duration "00:03:19" ;
+
+  bf:partOf </work/alice-in-wonderland-filmmusic-1951> .
+
+
+#Instance - LP-skivan med Filmmusiken
+
+</instance/in-a-world-of-my-own-rec-camarata> a bf:Instance ;
+  bf:title [a bf:InstanceTitle ;
+            bf:mainTitle "Walt Disney's Alice in Wonderland" ;
+            bf:subTitle "music from the score" 
+         ] ;
+  bf:responsibilityStatement "Camarata Chorus and Orchestra" ;
+  bf:provisionActivity [a bf:Publication ;
+             bf:agent </organization/walt-disney-productions> ;
+             bf:role lcrel:pbl 
+             ] .
 
 
 </person/åke-runnquist> a bf:Person .
