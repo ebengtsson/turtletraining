@@ -63,10 +63,15 @@ prefix id: <http:id.kb.se/>
  bf:responsibilityStatement "av Lewis Carroll ; i översättning av 
             Åke Runnquist ; med illustrationer av Tove Jansson" ;
  bf:provisionActivity [a bf:Publication ;
-             bf:agent </organization/albert-bonniers-forlag> ;
+             bf:agent </organization/albert-bonniers-forlag> 
+             ] ;
+ bf:provisionActivity [a bf:Manufacture ;
+             bf:agent </organization/v-pettersson-tryckeri> ;
              ]
+
 
 </person/åke-runnquist> a bf:Person .
 </person/lewis-carroll> a bf:Person .
 </person/tove-jansson> a bf:Person .
 </organization/albert-bonniers-forlag> a bf:Organization .
+</organization/v-pettersson-tryckeri> a bf:Organization .
