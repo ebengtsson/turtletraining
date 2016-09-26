@@ -12,7 +12,8 @@ prefix id: <http:id.kb.se/>
 
 #Work - engelskt orig
 
-</work/alices-adventures-in-wonderland-1864> a bf:Text, rdaco:txt ;
+</work/alices-adventures-in-wonderland-1864> a bf:Text  ;     
+#hur ska man få in rdaco:text@en (ifall det behövs)?
  bf:title [a bf:WorkTitle ;
             bf:mainTitle "Alice's adventures in wonderland"
          ] ;
@@ -22,7 +23,9 @@ prefix id: <http:id.kb.se/>
          ] ;
   bf:language lclang:eng ;
   bf:creationDate "1864"^^xsd:gYear ;
-  bf:translation </work/alice-i-underlandet-runnquist> . 
+  bf:translation </work/alice-i-underlandet-runnquist> ;
+  bf:hasDerivative </work/alice-in-wonderland-screenplay-1951> . 
+
 
 #Work - svensk övers
 
@@ -59,7 +62,8 @@ prefix id: <http:id.kb.se/>
  
   bf:partOf </work/alice-i-underlandet-bonniers-1966> .
 
-# Instance
+
+# Instance - tryckt bok
 
  </work/alice-i-underlandet-bonniers-1966> a bf:Print ;
  bf:title [a bf:InstanceTitle ;
@@ -81,8 +85,35 @@ prefix id: <http:id.kb.se/>
  bf:part </work/illustrationer-till-alice-i-underlandet-tove-jansson> .
 
 
+#Work - manus till disneyfilmen 1951
 
+</work/alice-in-wonderland-screenplay-1951> a bf:Text ;
+  bf:title [a bf:WorkTitle ;
+            bf:mainTitle "[Screenplay of Alice in Wonderland]"
+         ] ;
+  bf:contribution [ a bf:Contribution ;
+            bf:agent </person/milt-banta>, </person/joe-grant>, 
+            </person/joe-rinaldi> ;
+            bf:role lcrel:aus 
+         ] ;
+  bf:language lclang:eng ;
+  bf:creationDate "1945"^^xsd:gYear ;
+ #hur anger man årsintervall (1940-1950)?
+ bf:derivativeOf </work/alices-adventures-in-wonderland-1864> ;
+ #här skulle ju onekligen http://rdaregistry.info/Elements/u/adaptationOf.en 
+ #eller http://rdaregistry.info/Elements/u/screenplayBasedOn.en vara mer exakt :-)
 
+#Work - disneyfilmen 1951
+
+</work/alice-in-wonderland-disney-1951> a bf:MovingImage ;
+  bf:title [a bf:WorkTitle ;
+            bf:mainTitle "Alice in Wonderland"
+         ] ;
+  bf:contribution [ a bf:Contribution ;
+            bf:agent </person/clyde-geronimi>, </person/wilfred-jackson>, 
+            </person/hamilton-luske> ;
+            bf:role lcrel:drt 
+         ] ;
 
 
 </person/åke-runnquist> a bf:Person .
