@@ -12,7 +12,7 @@ prefix id: <http:id.kb.se/>
 
 #Work - engelskt orig
 
-</work/alices-adventures-in-wonderland-1864> a bf:Text ;
+</work/alices-adventures-in-wonderland-1864> a bf:Text, rdaco:txt ;
  bf:title [a bf:WorkTitle ;
             bf:mainTitle "Alice's adventures in wonderland"
          ] ;
@@ -38,27 +38,30 @@ prefix id: <http:id.kb.se/>
  #lcrel:ill </person/åke-runnquist> ;
   bf:language lclang:swe ;
   bf:creationDate "1966"^^xsd:gYear ; 
-  bf:translationOf </work/alices-adventures-in-wonderland-1864> .
+  
+  bf:translationOf </work/alices-adventures-in-wonderland-1864> ;
+  bf:partOf </work/alice-i-underlandet-bonniers-1966> .
 
 #Work - illustrationer
 
-</work/illustrationer-till-alice-i-underlandet> a bf:StillImage ;
- bf:title [a bf:Title ;
+</work/illustrationer-till-alice-i-underlandet-tove-jansson> a bf:StillImage ;
+  bf:title [a bf:Title ;
             bf:title "[55 illustrationer till Alice i underlandet]"
          ] ;
- bf:contribution [ a bf:Contribution ;
+  bf:contribution [ a bf:Contribution ;
             bf:agent </person/tove-jansson> ;
             bf:role lcrel:ill 
          ] ;
- bf:creationDate "1966"^^xsd:gYear ;
- bf:colorContent "blackAndWhite", "color" .
+  bf:creationDate "1966"^^xsd:gYear ;
+  bf:colorContent "blackAndWhite", "color" ;
 # jfr RDA color content http://www.rdaregistry.info/termList/RDAColourContent/
 # "monochrome", "polychrome"
-
+ 
+  bf:partOf </work/alice-i-underlandet-bonniers-1966> .
 
 # Instance
 
-</work/alice-i-underlandet-bonniers-1966> a bf:Print ;
+ </work/alice-i-underlandet-bonniers-1966> a bf:Print ;
  bf:title [a bf:InstanceTitle ;
             bf:mainTitle "Alice i underlandet"
          ] ;
@@ -72,9 +75,10 @@ prefix id: <http:id.kb.se/>
              bf:agent </organization/viktor-petterssons-bokindustri> ;
              bf:role lcrel:prt
              ] ;
+ bf:copyrightDate "1966"^^xsd:gYear ;
+
  bf:part </work/alice-i-underlandet-runnquist> ;
-bf:part
-bf:part
+ bf:part </work/illustrationer-till-alice-i-underlandet-tove-jansson> .
 
 
 
