@@ -8,6 +8,7 @@ prefix rdact: <http://rdaregistry.info/termList/RDACarrierType/>
 prefix lcrel: <http://id.loc.gov/vocabulary/relators/>
 prefix lclang: <http://id.loc.gov/vocabulary/languages/>
 prefix kbmarc: <http:id.kb.se/marc/>
+prefix kbx: <http:id.kb.se/vocab/x/>
 prefix id: <http:id.kb.se/>
 
 #Work - engelskt orig
@@ -67,10 +68,10 @@ prefix id: <http:id.kb.se/>
 
  </work/alice-i-underlandet-bonniers-1966> a bf:Print ;
  bf:title [a bf:InstanceTitle ;
-            bf:mainTitle "Alice i underlandet"
+            bf:mainTitle "Alice i underlandet" ;
+            bf:responsibilityStatement "av Lewis Carroll ; i översättning av 
+            Åke Runnquist ; med illustrationer av Tove Jansson" 
          ] ;
- bf:responsibilityStatement "av Lewis Carroll ; i översättning av 
-            Åke Runnquist ; med illustrationer av Tove Jansson" ;
  bf:provisionActivity [a bf:Publication ;
              bf:agent </organization/albert-bonniers-forlag> ;
              bf:role lcrel:pbl 
@@ -129,7 +130,7 @@ prefix id: <http:id.kb.se/>
   bf:expressionOf </work/alice-in-wonderland-screenplay-1951> ;
   bf:hasPart  </work/alice-in-wonderland-filmmusic-1951> .
 
-#Work - noterna till filmmusiken (instansen som idé)
+#Work - noterna till filmmusiken (notsamlingen/instansen som idé)
 
 </work/alice-in-wonderland-sheetmusic-1951> a bf:NotatedMusic ;
   bf:title [a bf:WorkTitle ;
@@ -143,9 +144,9 @@ prefix id: <http:id.kb.se/>
   bf:hasPart </work/wallace-fein-alice-in-wonderland-comp> ;
   bf:hasPart </work/wallace-fein-in-a-world-of-my-own-comp> .
 #osv. 
-#https://www.discogs.com/The-Chorus-And-Orchestra-Of-Camarata-Walt-Disneys-Alice-In-Wonderland/release/8110198
+#https://www.discogs.com/The-Chorus-And-Orchestra-Of-Camarata-Walt-Disneys-Alice-In-Wonderland/master/475551
 
-#Work - noter till första melodin Alice in Wonderland 
+#Work - noterna till första melodin Alice in Wonderland 
 
 </work/wallace-fein-alice-in-wonderland-comp> a bf:NotatedMusic ;
   bf:title [a bf:WorkTitle ;
@@ -160,7 +161,7 @@ prefix id: <http:id.kb.se/>
   bf:hasExpression </work/alice-in-wonderland-rec-camarata> .
 
 
-#Work - noter till andra melodin In a world of my own
+#Work - noterna till andra melodin In a world of my own
 
 </work/wallace-fein-in-a-world-of-my-own-comp>a bf:NotatedMusic ;
   bf:title [a bf:WorkTitle ;
@@ -175,7 +176,7 @@ prefix id: <http:id.kb.se/>
   bf:hasExpression </work/in-a-world-of-my-own-rec-camarata> .
 
 
-#Work - inspelade filmmusiken till disneyfilmen 1951 (instansen som idé)
+#Work - musik till disneyfilmen 1951 (instansen som idé)
 
 </work/alice-in-wonderland-filmmusic-1951> a bf:Audio ;
   bf:title [a bf:WorkTitle ;
@@ -183,9 +184,9 @@ prefix id: <http:id.kb.se/>
          ] ;
   bf:expressionOf </work/alice-in-wonderland-sheetmusic-1951> ;
   bf:hasPart </work/alice-in-wonderland-rec-camarata> ;
-  bf:hasPart </work/in-a-world-of-my-own-rec-camarata> .
-#etc
-
+  bf:hasPart </work/in-a-world-of-my-own-rec-camarata> ;
+  #etc
+  bf:hasInstance </instance/walt-disneys-alice-in-wonderland-LP-1959> .
 
 #Work - inspelning av A world of my own
 
@@ -207,18 +208,29 @@ prefix id: <http:id.kb.se/>
   bf:partOf </work/alice-in-wonderland-filmmusic-1951> .
 
 
-#Instance - LP-skivan med Filmmusiken
+#Instance - LP-skivan med filmmusiken
 
-</instance/in-a-world-of-my-own-rec-camarata> a bf:Instance ;
+</instance/walt-disneys-alice-in-wonderland-LP-1959> a bf:Instance ;
   bf:title [a bf:InstanceTitle ;
             bf:mainTitle "Walt Disney's Alice in Wonderland" ;
-            bf:subTitle "music from the score" 
+            bf:subTitle "all the music from the motion picture score" ;
+            bf:responsibilityStatement "Camarata Chorus and Orchestra" 
          ] ;
-  bf:responsibilityStatement "Camarata Chorus and Orchestra" ;
+ 
   bf:provisionActivity [a bf:Publication ;
              bf:agent </organization/walt-disney-productions> ;
              bf:role lcrel:pbl 
-             ] .
+             ] ;
+  bf:copyrightDate "1951"^^xsd:gYear ;
+  bf:date "1959"^^xsd:gYear ;
+  #typ av bf:date behöver preciseras. Här: utgivningstid
+  bf:carrier rdact:1004, kbx:LP ;
+  #audio disc" @en
+  bf:soundCharacteristic [ a bf:PlayingSpeed ;
+  #hjälp, det finns bara klasser där jag behöver properties
+
+
+  bf:instanceOf </work/alice-in-wonderland-filmmusic-1951> .
 
 
 </person/åke-runnquist> a bf:Person .
