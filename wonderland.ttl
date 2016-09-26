@@ -1,5 +1,6 @@
 base <http://bibliotek.se/>
 
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix bf: <http://id.loc.gov/ontologies/bibframe/>
 prefix rdaco: <http://rdaregistry.info/termList/RDAContentType/>
 prefix rdamt: <http://rdaregistry.info/termList/RDAMediaType/>
@@ -9,12 +10,13 @@ prefix lclang: <http://id.loc.gov/vocabulary/languages/>
 prefix kbmarc: <http:id.kb.se/marc/>
 prefix id: <http:id.kb.se/>
 
+#Work - svensk övers
+
 </work/alice-i-underlandet> a bf:Text ;
 
   bf:title [a bf:WorkTitle ;
             bf:mainTitle "Alice i underlandet"
          ] ;
-
   bf:contribution [ a bf:Contribution ;
             bf:agent </person/åke-runnquist> ;
             bf:role lcrel:trl 
@@ -23,8 +25,10 @@ prefix id: <http:id.kb.se/>
  #lcrel:ill </person/åke-runnquist> ;
 
   bf:language lclang:swe ;
+  bf:creationDate "1966"^^xsd:gYear ; 
   bf:translationOf </work/alices-adventures-in-wonderland> .
 
+#Work - engelskt orig
 
 </work/alice-i-underlandet> a bf:Text ;
  bf:title [a bf:WorkTitle ;
@@ -35,6 +39,34 @@ prefix id: <http:id.kb.se/>
             bf:role lcrel:aut 
          ] ;
   bf:language lclang:eng ;
-  bf:translation </bok/alice-i-underlandet> .
+  bf:translation </bok/alice-i-underlandet> ;
+  bf:creationDate "1864"^^xsd:gYear . 
+
+#Work - illustrationer
+
+</work/illustrationer-till-alice-i-underlandet> a bf:StillImage ;
+ bf:title [a bf:Title ;
+            bf:title "[55 illustrationer till Alice i underlandet]"
+         ] ;
+ bf:contribution [ a bf:Contribution ;
+            bf:agent </person/tove-jansson> ;
+            bf:role lcrel:ill 
+         ] ;
+ bf:creationDate "1966"^^xsd:gYear .
+
+# Instance
+
+</work/alice-i-underlandet-bonniers-1966> a bf:Print ;
+ bf:title [a bf:InstanceTitle ;
+            bf:mainTitle "Alice i underlandet"
+         ] ;
+ bf:responsibilityStatement "av Lewis Carroll ; i översättning av 
+            Åke Runnquist ; med illustrationer av Tove Jansson" ;
+ bf:provisionActivity [a bf:Publication ;
+             bf:agent </organization/albert-bonniers-forlag> ;
+             ]
 
 </person/åke-runnquist> a bf:Person .
+</person/lewis-carroll> a bf:Person .
+</person/tove-jansson> a bf:Person .
+</organization/albert-bonniers-forlag> a bf:Organization .
