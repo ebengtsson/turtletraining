@@ -10,10 +10,23 @@ prefix lclang: <http://id.loc.gov/vocabulary/languages/>
 prefix kbmarc: <http:id.kb.se/marc/>
 prefix id: <http:id.kb.se/>
 
+#Work - engelskt orig
+
+</work/alices-adventures-in-wonderland-1864> a bf:Text ;
+ bf:title [a bf:WorkTitle ;
+            bf:mainTitle "Alice's adventures in wonderland"
+         ] ;
+ bf:contribution [ a bf:Contribution ;
+            bf:agent </person/lewis-carroll> ;
+            bf:role lcrel:aut 
+         ] ;
+  bf:language lclang:eng ;
+  bf:creationDate "1864"^^xsd:gYear ;
+  bf:translation </work/alice-i-underlandet-runnquist> . 
+
 #Work - svensk övers
 
-</work/alice-i-underlandet> a bf:Text ;
-
+</work/alice-i-underlandet-runnquist> a bf:Text ;
   bf:title [a bf:WorkTitle ;
             bf:mainTitle "Alice i underlandet"
          ] ;
@@ -23,24 +36,9 @@ prefix id: <http:id.kb.se/>
          ] ;
  #lcrel:trl </person/åke-runnquist> ;
  #lcrel:ill </person/åke-runnquist> ;
-
   bf:language lclang:swe ;
   bf:creationDate "1966"^^xsd:gYear ; 
-  bf:translationOf </work/alices-adventures-in-wonderland> .
-
-#Work - engelskt orig
-
-</work/alice-i-underlandet> a bf:Text ;
- bf:title [a bf:WorkTitle ;
-            bf:mainTitle "Alice's adventures in wonderland"
-         ] ;
- bf:contribution [ a bf:Contribution ;
-            bf:agent </person/lewis-carroll> ;
-            bf:role lcrel:aut 
-         ] ;
-  bf:language lclang:eng ;
-  bf:translation </bok/alice-i-underlandet> ;
-  bf:creationDate "1864"^^xsd:gYear . 
+  bf:translationOf </work/alices-adventures-in-wonderland-1864> .
 
 #Work - illustrationer
 
@@ -52,7 +50,11 @@ prefix id: <http:id.kb.se/>
             bf:agent </person/tove-jansson> ;
             bf:role lcrel:ill 
          ] ;
- bf:creationDate "1966"^^xsd:gYear .
+ bf:creationDate "1966"^^xsd:gYear ;
+ bf:colorContent "blackAndWhite", "color" .
+# jfr RDA color content http://www.rdaregistry.info/termList/RDAColourContent/
+# "monochrome", "polychrome"
+
 
 # Instance
 
@@ -63,15 +65,24 @@ prefix id: <http:id.kb.se/>
  bf:responsibilityStatement "av Lewis Carroll ; i översättning av 
             Åke Runnquist ; med illustrationer av Tove Jansson" ;
  bf:provisionActivity [a bf:Publication ;
-             bf:agent </organization/albert-bonniers-forlag> 
+             bf:agent </organization/albert-bonniers-forlag> ;
+             bf:role lcrel:pbl 
              ] ;
  bf:provisionActivity [a bf:Manufacture ;
-             bf:agent </organization/v-pettersson-tryckeri> ;
-             ]
+             bf:agent </organization/viktor-petterssons-bokindustri> ;
+             bf:role lcrel:prt
+             ] ;
+ bf:part </work/alice-i-underlandet-runnquist> ;
+bf:part
+bf:part
+
+
+
+
 
 
 </person/åke-runnquist> a bf:Person .
 </person/lewis-carroll> a bf:Person .
 </person/tove-jansson> a bf:Person .
 </organization/albert-bonniers-forlag> a bf:Organization .
-</organization/v-pettersson-tryckeri> a bf:Organization .
+</organization/viktor-petterssons-bokindustri> a bf:Organization .
