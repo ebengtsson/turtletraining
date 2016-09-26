@@ -89,7 +89,7 @@ prefix id: <http:id.kb.se/>
 
 </work/alice-in-wonderland-screenplay-1951> a bf:Text ;
   bf:title [a bf:WorkTitle ;
-            bf:mainTitle "[Screenplay of Alice in Wonderland]"
+            bf:mainTitle "[Screenplay to Alice in Wonderland]"
          ] ;
   bf:contribution [ a bf:Contribution ;
             bf:agent </person/milt-banta>, </person/joe-grant>, 
@@ -99,9 +99,10 @@ prefix id: <http:id.kb.se/>
   bf:language lclang:eng ;
   bf:creationDate "1945"^^xsd:gYear ;
  #hur anger man årsintervall (1940-1950)?
- bf:derivativeOf </work/alices-adventures-in-wonderland-1864> ;
- #här skulle ju onekligen http://rdaregistry.info/Elements/u/adaptationOf.en 
+ bf:derivativeOf </work/alices-adventures-in-wonderland-1864> .
+ #här skulle förvisso http://rdaregistry.info/Elements/u/adaptationOf.en 
  #eller http://rdaregistry.info/Elements/u/screenplayBasedOn.en vara mer exakt :-)
+
 
 #Work - disneyfilmen 1951
 
@@ -114,10 +115,27 @@ prefix id: <http:id.kb.se/>
             </person/hamilton-luske> ;
             bf:role lcrel:drt 
          ] ;
+  bf:expressionOf </work/alice-in-wonderland-screenplay-1951> ;
+  bf:hasPart  </work/alice-in-wonderland-filmmusic-1951> .
+
+#Work - musiken till disneyfilmen 1951
+
+</work/alice-in-wonderland-filmmusic-1951> a bf:NotatedMusic ;
+  bf:title [a bf:WorkTitle ;
+            bf:mainTitle "[Sheet music to the film Alice in Wonderland]"
+         ] ;
+  bf:contribution [ a bf:Contribution ;
+            bf:agent </person/oliver-wallace> ;
+            bf:role lcrel:cmp 
+         ] ;
+  bf:partOf </work/alice-in-wonderland-disney-1951> .
 
 
 </person/åke-runnquist> a bf:Person .
 </person/lewis-carroll> a bf:Person .
 </person/tove-jansson> a bf:Person .
+</person/milt-banta> a bf:Person .
+</person/joe-grant> a bf:Person .
+</person/joe-rinaldi> a bf:Person .
 </organization/albert-bonniers-forlag> a bf:Organization .
 </organization/viktor-petterssons-bokindustri> a bf:Organization .
