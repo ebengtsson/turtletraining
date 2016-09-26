@@ -115,20 +115,21 @@ prefix id: <http:id.kb.se/>
             </person/hamilton-luske> ;
             bf:role lcrel:drt 
          ] ;
+  bf:provisionActivity [a bf:Production ;
+             bf:agent </organization/walt-disney-productions> ;
+             bf:role lcrel:asg
+  #lcrel verkar sakna lämplig term för produktionsbolag
+             ] ;
+  bf:duration "01:15:00" ;
+  #datatyp
+  bf:date "1951-07-26"^^xsd:gDate ;
+  #borde preciseras. bf saknar både premiärdatum och utgivningstid
+  #jfr http://rdaregistry.info/Elements/u/dateOfPublication.en
+
   bf:expressionOf </work/alice-in-wonderland-screenplay-1951> ;
   bf:hasPart  </work/alice-in-wonderland-filmmusic-1951> .
 
-#Work - musiken till disneyfilmen 1951
 
-</work/alice-in-wonderland-filmmusic-1951> a bf:NotatedMusic ;
-  bf:title [a bf:WorkTitle ;
-            bf:mainTitle "[Sheet music to the film Alice in Wonderland]"
-         ] ;
-  bf:contribution [ a bf:Contribution ;
-            bf:agent </person/oliver-wallace> ;
-            bf:role lcrel:cmp 
-         ] ;
-  bf:partOf </work/alice-in-wonderland-disney-1951> .
 
 
 </person/åke-runnquist> a bf:Person .
@@ -137,5 +138,10 @@ prefix id: <http:id.kb.se/>
 </person/milt-banta> a bf:Person .
 </person/joe-grant> a bf:Person .
 </person/joe-rinaldi> a bf:Person .
+</person/oliver-wallace> a bf:Person .
+</person/sam-e-fein> a bf:Person .
+</person/darlene-gillespie> a bf:Person .
 </organization/albert-bonniers-forlag> a bf:Organization .
 </organization/viktor-petterssons-bokindustri> a bf:Organization .
+</organization/walt-disney-productions> a bf:Organization .
+</organization/toots-camarata-and-his-orchestra> a bf:Organization .
