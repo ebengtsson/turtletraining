@@ -59,6 +59,7 @@ prefix id: <http:id.kb.se/>
          ] ;
   bf:originDate "1966"^^xsd:gYear ;
   bf:colorContent "blackAndWhite", "color" ;
+
 # jfr RDA color content http://www.rdaregistry.info/termList/RDAColourContent/
 # "monochrome", "polychrome"
  
@@ -117,7 +118,8 @@ prefix id: <http:id.kb.se/>
             </person/hamilton-luske> ;
             bf:role lcrel:drt 
          ] ;
-  bf:provisionActivity [a bf:Production ;
+  bf:provisionActivity [a bf:Production ; 
+  #gör om till contribution
              bf:agent </organization/walt-disney-productions> ;
              bf:role lcrel:asg
   #lcrel verkar sakna lämplig term för produktionsbolag
