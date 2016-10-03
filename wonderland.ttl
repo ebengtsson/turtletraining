@@ -107,7 +107,7 @@ prefix id: <http:id.kb.se/>
  #eller http://rdaregistry.info/Elements/u/screenplayBasedOn.en vara mer exakt :-)
 
 
-#Work - disneyfilmen 1951
+#Work - disneyfilmen 1951 - uttrycket
 
 </work/alice-in-wonderland-disney-1951> a bf:MovingImage ;
   bf:title [a bf:WorkTitle ;
@@ -125,13 +125,33 @@ prefix id: <http:id.kb.se/>
   bf:duration "PT1H15M0S"^^xsd:duration ;
   #datatyp bf:duration "01:15:00" ;
    
-  bf:originDate "1951-07-26"^^xsd:date ;
-  bf:historyOfWork "premiärdatum 1951-07-26"^^xs:string ;
-  #borde preciseras. bf saknar både premiärdatum och utgivningstid
+  bf:date "1951"^^xsd:date ;
+  bf:expressionOf </work/alice-in-wonderland-screenplay-1951> .
+
+
+#NYTT
+
+#Instance - biografversionen 1951
+
+</instance/alice-in-wonderland-disney-1951> a bf:Instance ;
+  bf:title [a bf:InstanceTitle ;
+            bf:mainTitle "Walt Disney's Alice in Wonderland" ;
+            bf:responsibilityStatement "directors Clyde Geronimi, 
+            Hamilton Luske, Wilfred Jackson"
+         ] ;
+
+  bf:provisionActivity [a bf:Distribution ; 
+             bf:agent </organization/warner-brothers> ;
+             bf:role lcrel:dst
+             ] ;
+  bf:duration "PT1H22M0S"^^xsd:duration ;
+  #datatyp bf:duration "01:22:00" ;
+   
+  bf:date "1951-07-26"^^xsd:date ;
+  bf:historyOfWork "premiärdatum 1951-07-26"^^xsd:string ;
   #jfr http://rdaregistry.info/Elements/u/dateOfPublication.en
 
-  bf:expressionOf </work/alice-in-wonderland-screenplay-1951> .
-  #bf:hasPart  </work/alice-in-wonderland-filmmusic-1951> .
+  bf:instanceOf </work/alice-in-wonderland-disney-1951> .
 
 
 #Work - noterna till filmmusiken (notsamlingen/instansen som idé)
@@ -143,7 +163,7 @@ prefix id: <http:id.kb.se/>
   bf:title [a bf:WorkTitle ;
             bf:mainTitle "[Sheet music to the film Alice in Wonderland]"
          ] ;
-  bf:copyrightDate "1950"^^xsd:gYear ;
+  bf:originDate "1950"^^xsd:gYear ;
   bf:hasPart </work/wallace-fein-alice-in-wonderland-comp> ;
   bf:hasPart </work/wallace-fein-in-a-world-of-my-own-comp> .
 #osv. 
@@ -158,8 +178,7 @@ prefix id: <http:id.kb.se/>
             bf:agent </person/oliver-wallace>, </person/sam-e-fein> ;
             bf:role lcrel:cmp 
          ] ;
-  bf:originDate "1948"^^xsd:gYear ;
-  bf:partOf </work/alice-in-wonderland-sheetmusic-manuscript> .
+  bf:originDate "1948"^^xsd:gYear .
 
 
 #Work - noterna till andra melodin In a world of my own
@@ -172,8 +191,7 @@ prefix id: <http:id.kb.se/>
             bf:agent </person/oliver-wallace>, </person/sam-e-fein> ;
             bf:role lcrel:cmp 
          ] ;
-  bf:creationDate "1949"^^xsd:gYear ;
-  bf:partOf </work/alice-in-wonderland-sheetmusic-manuscript> .
+  bf:creationDate "1949"^^xsd:gYear .
 
 #NYTT
 #Instance - samlingsvolym med de tryckta noterna till filmmusiken 
@@ -181,7 +199,7 @@ prefix id: <http:id.kb.se/>
 </instance/alice-in-wonderland-sheetmusic-1951> a bf:Print ;
   bf:title [a bf:InstanceTitle ;
             bf:mainTitle "Walt Disney's Alice in Wonderland" ;
-            bf:partTitle "vocal selections" 
+            bf:partTitle "vocal selections" ;
             bf:responsibilityStatement "Sammy Fain, Oliver Wallace"
          ] ;
  bf:provisionActivity [a bf:Publication ;
@@ -251,6 +269,15 @@ prefix id: <http:id.kb.se/>
 #https://www.discogs.com/The-Chorus-And-Orchestra-Of-Camarata-Walt-Disneys-Alice-In-Wonderland/master/475551
 
 
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          
 
 </person/åke-runnquist> a bf:Person .
 </person/lewis-carroll> a bf:Person .
@@ -265,3 +292,4 @@ prefix id: <http:id.kb.se/>
 </organization/viktor-petterssons-bokindustri> a bf:Organization .
 </organization/walt-disney-productions> a bf:Organization .
 </organization/toots-camarata-and-his-orchestra> a bf:Organization .
+</organization/warner-brothers> a bf:Organization .
