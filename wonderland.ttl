@@ -15,7 +15,6 @@ prefix id: <http:id.kb.se/>
 
 </work/alices-adventures-in-wonderland-1864> a bf:Text  ; 
  bf:content rdaco:1020 ;
- #hur ska man få in rdaco:text@en (ifall det behövs)?
  bf:title [a bf:WorkTitle ;
             bf:mainTitle "Alice's adventures in wonderland"
          ] ;
@@ -24,9 +23,9 @@ prefix id: <http:id.kb.se/>
             bf:role lcrel:aut 
          ] ;
   bf:language lclang:eng ;
-  bf:originDate "1864"^^xsd:gYear ;
-  bf:translation </work/alice-i-underlandet-runnquist> ;
-  bf:hasDerivative </work/alice-in-wonderland-screenplay-1951> . 
+  bf:originDate "1864"^^xsd:gYear .
+  #bf:translation </work/alice-i-underlandet-runnquist> ;
+  #bf:hasDerivative </work/alice-in-wonderland-screenplay-1951> .
 
 
 #Work - svensk övers
@@ -44,8 +43,8 @@ prefix id: <http:id.kb.se/>
   bf:language lclang:swe ;
   bf:originDate "1966"^^xsd:gYear ; 
   
-  bf:translationOf </work/alices-adventures-in-wonderland-1864> ;
-  bf:partOf </work/alice-i-underlandet-bonniers-1966> .
+  bf:translationOf </work/alices-adventures-in-wonderland-1864> .
+  #bf:partOf </work/alice-i-underlandet-bonniers-1966> .
 
 #Work - illustrationer
 
@@ -58,17 +57,18 @@ prefix id: <http:id.kb.se/>
             bf:role lcrel:ill 
          ] ;
   bf:originDate "1966"^^xsd:gYear ;
-  bf:colorContent "blackAndWhite", "color" ;
+  bf:colorContent "blackAndWhite", "color" .
 
+#bf:colorContent kbx:blackAndWhite, kbx:color ;
 # jfr RDA color content http://www.rdaregistry.info/termList/RDAColourContent/
-# "monochrome", "polychrome"
+# "monochrome", "polychrome", dvs den innehåller inte tillräckligt många värden
  
-  bf:partOf </work/alice-i-underlandet-bonniers-1966> .
+ # bf:partOf </work/alice-i-underlandet-bonniers-1966> .
 
 
 # Instance - tryckt bok
 
- </work/alice-i-underlandet-bonniers-1966> a bf:Print ;
+ </instance/alice-i-underlandet-bonniers-1966> a bf:Print ;
  bf:title [a bf:InstanceTitle ;
             bf:mainTitle "Alice i underlandet" ;
             bf:responsibilityStatement "av Lewis Carroll ; i översättning av 
@@ -101,7 +101,7 @@ prefix id: <http:id.kb.se/>
          ] ;
   bf:language lclang:eng ;
   bf:originDate "1945"^^xsd:gYear ;
- #hur anger man årsintervall (1940-1950)?
+ #hur anger man årsintervall (1940-1950) - bf:originDate "1945-1950"^^xsd:Timespan ;  ???
  bf:derivativeOf </work/alices-adventures-in-wonderland-1864> .
  #här skulle förvisso http://rdaregistry.info/Elements/u/adaptationOf.en 
  #eller http://rdaregistry.info/Elements/u/screenplayBasedOn.en vara mer exakt :-)
@@ -118,36 +118,35 @@ prefix id: <http:id.kb.se/>
             </person/hamilton-luske> ;
             bf:role lcrel:drt 
          ] ;
-  bf:provisionActivity [a bf:Production ; 
-  #gör om till contribution
+  bf:contribution [a bf:Contribution ; 
              bf:agent </organization/walt-disney-productions> ;
-             bf:role lcrel:asg
-  #lcrel verkar sakna lämplig term för produktionsbolag
+             bf:role lcrel:prn
              ] ;
-  bf:duration "01:15:00" ;
-  #datatyp
-  bf:date "1951-07-26"^^xsd:gDate ;
+  bf:duration "PT1H15M0S"^^xsd:duration ;
+  #datatyp bf:duration "01:15:00" ;
+   
+  bf:originDate "1951-07-26"^^xsd:gDate ;
+  bf:historyOfWork "premiärdatum 1951-07-26"^^xs:string ;
   #borde preciseras. bf saknar både premiärdatum och utgivningstid
   #jfr http://rdaregistry.info/Elements/u/dateOfPublication.en
 
-  bf:expressionOf </work/alice-in-wonderland-screenplay-1951> ;
-  bf:hasPart  </work/alice-in-wonderland-filmmusic-1951> .
+  bf:expressionOf </work/alice-in-wonderland-screenplay-1951> .
+  #bf:hasPart  </work/alice-in-wonderland-filmmusic-1951> .
+
 
 #Work - noterna till filmmusiken (notsamlingen/instansen som idé)
 
-</work/alice-in-wonderland-sheetmusic-1951> a bf:NotatedMusic ;
+</work/alice-in-wonderland-sheetmusic-manuscript> a bf:NotatedMusic ;
+#NYTT
+#borde det eg vara </instance/alice-in-wonderland-sheetmusic-manuscript> a bf:Manuscript ;
+#begrepp som bf:Text och bf:NotatedMusic på Worknivå gör att bf:Manuscript på instansnivå verkar oanvändbart
   bf:title [a bf:WorkTitle ;
             bf:mainTitle "[Sheet music to the film Alice in Wonderland]"
          ] ;
- #bf:provisionActivity [a bf:Publication ;
- #            bf:agent </organization/walt-disney-productions> ;
- #            bf:role lcrel:pbl 
- #            ] ;
   bf:copyrightDate "1950"^^xsd:gYear ;
   bf:hasPart </work/wallace-fein-alice-in-wonderland-comp> ;
   bf:hasPart </work/wallace-fein-in-a-world-of-my-own-comp> .
 #osv. 
-#https://www.discogs.com/The-Chorus-And-Orchestra-Of-Camarata-Walt-Disneys-Alice-In-Wonderland/master/475551
 
 #Work - noterna till första melodin Alice in Wonderland 
 
@@ -160,8 +159,7 @@ prefix id: <http:id.kb.se/>
             bf:role lcrel:cmp 
          ] ;
   bf:originDate "1948"^^xsd:gYear ;
-  bf:partOf </work/alice-in-wonderland-sheetmusic-1951> ;
-  bf:hasExpression </work/alice-in-wonderland-rec-camarata> .
+  bf:partOf </work/alice-in-wonderland-sheetmusic-manuscript> .
 
 
 #Work - noterna till andra melodin In a world of my own
@@ -175,8 +173,23 @@ prefix id: <http:id.kb.se/>
             bf:role lcrel:cmp 
          ] ;
   bf:creationDate "1949"^^xsd:gYear ;
-  bf:partOf </work/alice-in-wonderland-sheetmusic-1951> ;
-  bf:hasExpression </work/in-a-world-of-my-own-rec-camarata> .
+  bf:partOf </work/alice-in-wonderland-sheetmusic-manuscript> .
+
+#NYTT
+#Instance - samlingsvolym med de tryckta noterna till filmmusiken 
+
+</instance/alice-in-wonderland-sheetmusic-1951> a bf:Print ;
+  bf:title [a bf:InstanceTitle ;
+            bf:mainTitle "Walt Disney's Alice in Wonderland" ;
+            bf:partTitle "vocal selections" 
+            bf:responsibilityStatement "Sammy Fain, Oliver Wallace"
+         ] ;
+ bf:provisionActivity [a bf:Publication ;
+             bf:agent </organization/walt-disney-productions> ;
+             bf:role lcrel:pbl 
+             ] ;
+  bf:copyrightDate "1951"^^xsd:gYear ;
+  bf:instanceOf </work/alice-in-wonderland-sheetmusic-manuscript> .
 
 
 #Work - musik till disneyfilmen 1951 (instansen som idé)
@@ -185,7 +198,7 @@ prefix id: <http:id.kb.se/>
   bf:title [a bf:WorkTitle ;
             bf:mainTitle "Walt Disney's Alice In Wonderland"
          ] ;
-  bf:expressionOf </work/alice-in-wonderland-sheetmusic-1951> ;
+  bf:expressionOf </work/alice-in-wonderland-sheetmusic-manuscript> ;
   bf:hasPart </work/alice-in-wonderland-rec-camarata> ;
   bf:hasPart </work/in-a-world-of-my-own-rec-camarata> ;
   #etc
@@ -234,6 +247,9 @@ prefix id: <http:id.kb.se/>
 
 
   bf:instanceOf </work/alice-in-wonderland-filmmusic-1951> .
+
+#https://www.discogs.com/The-Chorus-And-Orchestra-Of-Camarata-Walt-Disneys-Alice-In-Wonderland/master/475551
+
 
 
 </person/åke-runnquist> a bf:Person .
