@@ -125,7 +125,7 @@ prefix id: <http:id.kb.se/>
   bf:duration "PT1H15M0S"^^xsd:duration ;
   #datatyp bf:duration "01:15:00" ;
    
-  bf:originDate "1951-07-26"^^xsd:gDate ;
+  bf:originDate "1951-07-26"^^xsd:date ;
   bf:historyOfWork "premiärdatum 1951-07-26"^^xs:string ;
   #borde preciseras. bf saknar både premiärdatum och utgivningstid
   #jfr http://rdaregistry.info/Elements/u/dateOfPublication.en
