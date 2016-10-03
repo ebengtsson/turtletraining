@@ -324,7 +324,7 @@ bf:projectionChracteristic [ a bf:PresentationFormat ;
              bf:agent </organization/walt-disney-productions> ;
              bf:role lcrel:pbl 
              ] ;
-  bf:copyrightDate "1951"^^xsd:gYear ;
+  #bf:copyrightDate "1951"^^xsd:gYear ;
   bf:date "1959"^^xsd:gYear ;
   #typ av bf:date behöver preciseras. Här: utgivningstid
   bf:carrier rdact:1004, kbx:LP ;
@@ -334,16 +334,8 @@ bf:projectionChracteristic [ a bf:PresentationFormat ;
   bf:instanceOf </work/alice-in-wonderland-filmmusic-1951> .
 
 
-
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
+   
+                                         
 
 </person/åke-runnquist> a bf:Person .
 </person/lewis-carroll> a bf:Person .
