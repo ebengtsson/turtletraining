@@ -5,6 +5,7 @@ prefix bf: <http://id.loc.gov/ontologies/bibframe/>
 prefix rdaco: <http://rdaregistry.info/termList/RDAContentType/>
 prefix rdamt: <http://rdaregistry.info/termList/RDAMediaType/>
 prefix rdact: <http://rdaregistry.info/termList/RDACarrierType/>
+prefix rdau: <http://rdaregistry.info/Elements/u/>
 prefix lcrel: <http://id.loc.gov/vocabulary/relators/>
 prefix lclang: <http://id.loc.gov/vocabulary/languages/>
 prefix kbmarc: <http:id.kb.se/marc/>
@@ -146,12 +147,77 @@ prefix id: <http:id.kb.se/>
              ] ;
   bf:duration "PT1H22M0S"^^xsd:duration ;
   #datatyp bf:duration "01:22:00" ;
-   
+  bf:projectionCharacteristic [a bf:ProjectionSpeed ;
+        rdau:P60585 "24fps" 
+     ] ;
+bf:projectionChracteristic [ a bf:PresentationFormat ;
+        rdau:P60529 "widescreen" 
+     ] ;
+#vill eg undvika rdau om det går
+
   bf:date "1951-07-26"^^xsd:date ;
   bf:historyOfWork "premiärdatum 1951-07-26"^^xsd:string ;
   #jfr http://rdaregistry.info/Elements/u/dateOfPublication.en
 
   bf:instanceOf </work/alice-in-wonderland-disney-1951> .
+
+
+#NYTT
+#Instance - biofilmen på VHS
+
+</instance/alice-in-wonderland-disney-1951-vhs> a bf:Instance ;
+  bf:title [a bf:InstanceTitle ;
+            bf:mainTitle "Walt Disney's Alice in Wonderland" ;
+            bf:responsibilityStatement "directors Clyde Geronimi, 
+            Hamilton Luske, Wilfred Jackson"
+         ] ;
+  bf:provisionActivity [a bf:Manufacture ; 
+             bf:agent </organization/warner-home-video> ;
+             bf:role lcrel:mfr ;
+             bf:date "1990"
+             ] ;
+    bf:provisionActivity [a bf:Publication ; 
+             bf:agent </organization/buena-vista-home-entertainment> ;
+             bf:role lcrel:dst ;
+             bf:copyrightDate "1992"
+             ] ;
+   bf:duration "PT2H37M0S"^^xsd:duration ;
+   #datatyp bf:duration "02:37:00" ;
+   bf:carrier kbx:VHS ;   
+   bf:language lclang:eng, lclang:swe ;
+   bf:note "innehåller två versioner av filmen, en textad och en dubbad"@sv ;
+   bf:instanceOf </work/alice-in-wonderland-disney-1951> ;
+   bf:otherPhysicalFormat </instance/alice-in-wonderland-disney-1951-dvd> .
+
+#NYTT
+#Instance - biofilmen på video (DVD)
+
+</instance/alice-in-wonderland-disney-1951-dvd> a bf:Instance ;
+  bf:title [a bf:InstanceTitle ;
+            bf:mainTitle "Walt Disney's Alice in Wonderland" ;
+            bf:responsibilityStatement "directors Clyde Geronimi, 
+            Hamilton Luske, Wilfred Jackson"
+         ] ;
+  bf:provisionActivity [a bf:Manufacture ; 
+             bf:agent </organization/warner-home-video> ;
+             bf:role lcrel:mfr ;
+             bf:date "2001"
+             ] ;
+    bf:provisionActivity [a bf:Publication ; 
+             bf:agent </organization/buena-vista-home-entertainment> ;
+             bf:role lcrel:dst ;
+             bf:copyrightDate "2004"
+             ] ;
+   bf:duration "PT3H55M0S"^^xsd:duration ;
+   #datatyp bf:duration "03:55:00" ;
+   bf:carrier kbx:DVD-Video ;
+   bf:language lclang:eng, lclang:swe, lclang:ice, lclang:nor, lclang:dan, 
+   lclang:fin, lclang:sgn ;
+   bf:note "Tal på engelska. Språkval: dubbad och textad på svenska, norska,
+   danska, isländska och teckenspråk"@sv ;
+   
+   bf:instanceOf </work/alice-in-wonderland-disney-1951> ;
+   bf:otherPhysicalFormat </instance/alice-in-wonderland-disney-1951-dvd> .
 
 
 #Work - noterna till filmmusiken (notsamlingen/instansen som idé)
@@ -218,9 +284,12 @@ prefix id: <http:id.kb.se/>
          ] ;
   bf:expressionOf </work/alice-in-wonderland-sheetmusic-manuscript> ;
   bf:hasPart </work/alice-in-wonderland-rec-camarata> ;
-  bf:hasPart </work/in-a-world-of-my-own-rec-camarata> ;
+  bf:hasPart </work/in-a-world-of-my-own-rec-camarata> .
   #etc
-  bf:hasInstance </instance/walt-disneys-alice-in-wonderland-LP-1959> .
+ 
+#https://www.discogs.com/The-Chorus-And-Orchestra-Of-Camarata-Walt-Disneys-Alice-In-Wonderland/master/475551
+
+
 
 #Work - inspelning av A world of my own
 
@@ -259,14 +328,11 @@ prefix id: <http:id.kb.se/>
   bf:date "1959"^^xsd:gYear ;
   #typ av bf:date behöver preciseras. Här: utgivningstid
   bf:carrier rdact:1004, kbx:LP ;
-  #audio disc" @en
-  bf:soundCharacteristic [ a bf:PlayingSpeed ;
-  #hjälp, det finns bara klasser där jag behöver properties
-
+  bf:soundCharacteristic [ a bf:PlayingSpeed ; 
+    rdfs:label "33 rpm" ] ;
 
   bf:instanceOf </work/alice-in-wonderland-filmmusic-1951> .
 
-#https://www.discogs.com/The-Chorus-And-Orchestra-Of-Camarata-Walt-Disneys-Alice-In-Wonderland/master/475551
 
 
                           
@@ -293,3 +359,5 @@ prefix id: <http:id.kb.se/>
 </organization/walt-disney-productions> a bf:Organization .
 </organization/toots-camarata-and-his-orchestra> a bf:Organization .
 </organization/warner-brothers> a bf:Organization .
+</organization/warner-home-video> a bf:Organization .                         
+</organization/buena-vista-home-entertainment> a bf:Organization .
