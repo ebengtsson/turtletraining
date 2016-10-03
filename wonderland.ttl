@@ -1,6 +1,7 @@
 base <http://bibliotek.se/>
 
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix bf: <http://id.loc.gov/ontologies/bibframe/>
 prefix rdaco: <http://rdaregistry.info/termList/RDAContentType/>
 prefix rdamt: <http://rdaregistry.info/termList/RDAMediaType/>
@@ -311,6 +312,20 @@ bf:projectionChracteristic [ a bf:PresentationFormat ;
   bf:partOf </work/alice-in-wonderland-filmmusic-1951> .
 
 
+#Work - skivomslag (fejkat ex)
+
+</work/walt-disneys-alice-in-wonderland-LP-1959-cover> a bf:Work ;
+  bf:title [a bf:WorkTitle ;
+		bf:mainTitle "[Cover of Alice in Wonderland LP]" 
+                ] ;
+bf:contribution [ a bf:Contribution ;
+            bf:agent </person/john-lounsbery> ;
+            bf:role lcrel:art, lcrel:ill 
+         ] ;
+   bf:creationDate "1950"^^xsd:gYear .
+
+
+
 #Instance - LP-skivan med filmmusiken
 
 </instance/walt-disneys-alice-in-wonderland-LP-1959> a bf:Instance ;
@@ -324,14 +339,16 @@ bf:projectionChracteristic [ a bf:PresentationFormat ;
              bf:agent </organization/walt-disney-productions> ;
              bf:role lcrel:pbl 
              ] ;
-  #bf:copyrightDate "1951"^^xsd:gYear ;
+  bf:copyrightDate "1951"^^xsd:gYear ;
   bf:date "1959"^^xsd:gYear ;
   #typ av bf:date behöver preciseras. Här: utgivningstid
-  bf:carrier rdact:1004, kbx:LP ;
+  bf:carrier kbx:LP ;
   bf:soundCharacteristic [ a bf:PlayingSpeed ; 
-    rdfs:label "33 rpm" ] ;
+             rdfs:label "33 rpm" 
+             ] ;
 
-  bf:instanceOf </work/alice-in-wonderland-filmmusic-1951> .
+  bf:instanceOf </work/alice-in-wonderland-filmmusic-1951>, 
+    </work/walt-disneys-alice-in-wonderland-LP-1959-cover> .
 
 
    
@@ -346,6 +363,7 @@ bf:projectionChracteristic [ a bf:PresentationFormat ;
 </person/oliver-wallace> a bf:Person .
 </person/sam-e-fein> a bf:Person .
 </person/darlene-gillespie> a bf:Person .
+</person/john-lounsbery> a bf:Person .
 </organization/albert-bonniers-forlag> a bf:Organization .
 </organization/viktor-petterssons-bokindustri> a bf:Organization .
 </organization/walt-disney-productions> a bf:Organization .
