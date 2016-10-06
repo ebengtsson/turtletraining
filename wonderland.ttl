@@ -85,9 +85,9 @@ prefix id: <http:id.kb.se/>
              bf:role lcrel:prt
              ] ;
  bf:copyrightDate "1966"^^xsd:gYear ;
+ bf:illustrativeContent </work/illustrationer-till-alice-i-underlandet-tove-jansson> ;
+ bf:instanceOf </work/alice-i-underlandet-runnquist> .
 
- bf:instanceOf </work/alice-i-underlandet-runnquist> ;
- bf:instanceOf </work/illustrationer-till-alice-i-underlandet-tove-jansson> .
 
 
 #Work - manus till disneyfilmen 1951
