@@ -4,39 +4,119 @@
 @prefix smdbc: <https://id.kb.se/vocab/smdb/carriers/> .
 @prefix : <https://id.kb.se/vocab/x/> .
 
- :LP a bf:Carrier ;
+ :lp a bf:Carrier ;
  skos:broadMatch rdact:1004 ;
  #"audio disc" @en
  skos:exactMatch smdbc:LP .
 
- :EP a bf:Carrier ;
+ :ep a bf:Carrier ;
  skos:broadMatch rdact:1004 ;
  #"audio disc" @en
  skos:exactMatch smdbc:EP .
+
+ :78 a bf:Carrier ;
+ skos:broadMatch rdact:1004 ;
+ #"audio disc" @en
+ skos:exactMatch smdbc:78varvsSkiva .
 
  :analogDisc a bf:Carrier ;
  skos:broadMatch rdact:1004 ;
  #"audio disc" @en
  skos:exactMatch smdbc:analogSkiva .
 
- :CDAudio a bf:Carrier ;
- skos:broadMatch rdact:1004 ;
- #"audio disc" @en
- skos:exactMatch smdbc:CD .
- #eg ljud-CD
+ :cylinder a bf:Carrier ;
+ skos:exactMatch rdact:1003 ;
+ #"audio cylinder" @en
+ skos:exactMatch smdbc:cylinder .
 
- :CD a bf:Carrier ;
- skos:related rdact:1004, rdact:1013, rdact:1060 ;
- #"audio disc", "computer disc", "videodisc" @en
-  skos:exactMatch smdbc:CD .
- #eg antingen ljud-CD eller bild-CD, multimedier-CD, text-CD, stillbild-CD
+ :cylinderCeleste a bf:Carrier ;
+ skos:broadMatch rdact:1003 ;
+ #"audio cylinder" @en
+ skos:exactMatch smdbc:Celeste .
 
  :soundWire a bf:Carrier ;
  skos:exactMatch rdact:1071 ;
  #"audio wire reel" @en
  skos:exactMatch smdbc:ljudtråd .
 
+ :dat a bf:carrier ;
+ skos:broadMatch rdact:1007 ;
+ #"audiocassette"
+ skos:exactMatch smdbc:DAT .
 
+:aiff a bf:Carrier ;
+ skos:related rdact:1018 ;
+ #"online resource" är eg ljudfil
+ #ang skos:related se not under cd nedan
+ skos:exactMatch smdbc:AIFF .
+
+:cdAudio a bf:Carrier ;
+ skos:broadMatch rdact:1004 ;
+ #"audio disc" @en
+ skos:exactMatch smdbc:CD .
+ #eg ljud-CD
+
+ :cd a bf:Carrier ;
+ skos:related rdact:1004, rdact:1013, rdact:1060 ;
+ #"audio disc", "computer disc", "videodisc" @en
+ #hur anger man detta? skos:related är fel, men jag tog det bara för att skriva något
+ #jfr https://www.w3.org/TR/2009/NOTE-skos-primer-20090818/#secassociative
+  skos:exactMatch smdbc:CD .
+ #eg antingen ljud-CD eller bild-CD, multimedier-CD, text-CD, stillbild-CD
+ #samma problem med CD-R, CD-RW, CD-ROM
+
+ :dvd a bf:Carrier ;
+  skos:related rdact:1004, rdact:1013, rdact:1060 ;
+ #"audio disc", "computer disc", "videodisc" @en
+ skos:exactMatch smdbc:DVD .
+ #eg antingen ljud-DVD eller bild-DVD, multimedier-DVD, text-DVD, stillbild-DVD
+ #samma problem med DVD-R, DVD+R, DVD-RW, DVD+RW, DVD-ROM
+
+ :dvdVideo a bf:Carrier ;
+  skos:broadMatch rdact:1060 ;
+ #"videodisc" @en
+ skos:exactMatch smdbc:DVD-video .
+ #kan även vara ljud-DVD-video och multimedier-DVD-video
+ 
+:bluRayDisc a bf:Carrier ;
+  skos:related rdact:1004, rdact:1013, rdact:1060 ;
+ #"audio disc", "computer disc","videodisc" @en
+ skos:exactMatch smdbc:BluRayDisc .
+ #eg antingen ljud-BluRayDisc, multimedier-BluRayDisc eller bild-BluRayDisc
+
+ :betamax a bf:Carrier ;
+ skos:related rdact:1007, rdact:1052 ;
+ #"audiocassette", "videocassette" @en
+ skos:exactMatch smdbc:Betamax .
+ #eg antingen ljud-Betamax eller video-Betamax 
+
+
+
+
+
+#:usb
+#:remoteAcess
+#cdRam
+#dvdRam
+#diskett3.1_2tum
+#diskett2.8tum
+#diskett5.1_4tum
+#hdDvd
+#hi8
+#laserdisc
+#mpeg4
+#quicktime
+#realMedia
+#wmf
+#umatic
+#umd - skivaoptiskdigital
+#vhs
+#vhsEp
+#vhsLp
+#video8
+#bwf jfr aiff
+#cdG ljud+text
+#cylinder normal,salong,konsert,diktafon
 
 
  #skos:exactMatch
