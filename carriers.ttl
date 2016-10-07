@@ -20,7 +20,7 @@
  skos:exactMatch smdbc:analogSkiva .
 
  :CDAudio a bf:Carrier ;
- skos:broadMatch rdact:1004
+ skos:broadMatch rdact:1004 ;
  #"audio disc" @en
  skos:exactMatch smdbc:CD .
  #eg ljud-CD
