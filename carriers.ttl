@@ -140,22 +140,32 @@
  skos:exactMatch smdbc:ljud_DVD-audio .
  
 
-:bluRayDisc a bf:Carrier ;
-  skos:related rdact:1004, rdact:1013, rdact:1060 ;
- #"audio disc", "computer disc","videodisc" @en
- skos:exactMatch smdbc:BluRayDisc .
- #eg antingen ljud-BluRayDisc, multimedier-BluRayDisc eller bild-BluRayDisc
+ :audio_bluRayDisc a bf:Carrier ;
+ skos:broadMatch rdact:1004 ;
+ #"audio disc" @en
+ skos:exactMatch smdbc:ljud_BluRayDisc .
 
- 
+ :computer_bluRayDisc a bf:Carrier ;
+  skos:broadMatch rdact:1013 ;
+ #"computer disc" @en
+ skos:exactMatch smdbc:multimedier_BluRayDisc .
+
+ :video_bluRayDisc a bf:Carrier ;
+  skos:broadMatch rdact:1060 ;
+ #"videodisc" @en
+ skos:exactMatch smdbc:video_BluRayDisc .
 
 
+:audio_betamax a bf:Carrier ;
+ skos:broadMatch rdact:1007 ;
+ #"audiocassette" @en
+ skos:exactMatch smdbc:ljud_Betamax .
 
 
-:betamax a bf:Carrier ;
- skos:related rdact:1007, rdact:1052 ;
- #"audiocassette", "videocassette" @en
- skos:exactMatch smdbc:Betamax .
- #eg antingen ljud-Betamax eller video-Betamax 
+ :video_betamax a bf:Carrier ;
+ skos:broadMatch rdact:1052 ;
+ #"videocassette" @en
+ skos:exactMatch smdbc:video_Betamax .
 
 
 
