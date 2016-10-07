@@ -1,1 +1,44 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix rdact: <http://rdaregistry.info/termList/RDACarrierType/> .
+@prefix smdbc: <https://id.kb.se/vocab/smdb/carriers/> .
+@prefix : <https://id.kb.se/vocab/x/> .
 
+ :LP a bf:Carrier ;
+ skos:broadMatch rdact:1004 ;
+ #"audio disc" @en
+ skos:exactMatch smdbc:LP .
+
+ :EP a bf:Carrier ;
+ skos:broadMatch rdact:1004 ;
+ #"audio disc" @en
+ skos:exactMatch smdbc:EP .
+
+ :analogDisc a bf:Carrier ;
+ skos:broadMatch rdact:1004 ;
+ #"audio disc" @en
+ skos:exactMatch smdbc:analogSkiva .
+
+ :CDAudio a bf:Carrier ;
+ skos:broadMatch rdact:1004
+ #"audio disc" @en
+ skos:exactMatch smdbc:CD .
+ #eg ljud-CD
+
+ :CD a bf:Carrier ;
+ skos:related rdact:1004, rdact:1013, rdact:1060 ;
+ #"audio disc", "computer disc", "videodisc" @en
+  skos:exactMatch smdbc:CD .
+ #eg antingen ljud-CD eller bild-CD, multimedier-CD, text-CD, stillbild-CD
+
+ :soundWire a bf:Carrier ;
+ skos:exactMatch rdact:1071 ;
+ #"audio wire reel" @en
+ skos:exactMatch smdbc:ljudtråd .
+
+
+
+
+ #skos:exactMatch
+ #skos:broadMatch
+ #skos:narrowMatch
