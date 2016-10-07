@@ -171,16 +171,17 @@
 
 
 #DVD-R, DVD+R, DVD-RW, DVD+RW, DVD-ROM (text stillbild ljud multimedier video)
+#CD-R, CD-ROM, CD-RW, CD-RAM, CD+G, SACD
+#CD-I (multimedier)
 #:usb
 #:remoteAcess
-#:cdRam
-#dvdRam
+#dDVD-RAM
+#HD DVD
 #diskett3.1_2tum
 #diskett2.8tum
 #diskett5.1_4tum
-#hdDvd
 #hi8
-#laserdisc
+#laserdisc ljud+video
 #mpeg4
 #quicktime
 #realMedia
@@ -192,20 +193,19 @@
 #vhsLp
 #video8
 #bwf jfr aiff
-#cdG ljud+text
 #cylinder normal,salong,konsert,diktafon
 #datLp
 #dcc ljudkassettmagnetisk
 #dds ljudkassettmagnetisk
 #elkassett
 #hdcd
-#magnetband 1 tum analog 
-#magnetband 1 tum digital
-#magnetband 1/2 tum analog
-#magnetband 1/2 tum digital
-#magnetband 1/4 tum analog
-#magnetband 1/4 tum digital (DASH)
-#magnetband 2 tum analog 
+#ljud_magnetband 1 tum analog 
+#ljud_magnetband 1 tum digital
+#ljud_magnetband 1/2 tum analog
+#ljud_magnetband 1/2 tum digital
+#ljud_magnetband 1/4 tum analog
+#ljud_magnetband 1/4 tum digital (DASH)
+#ljud_magnetband 2 tum analog 
 #maxi/12” ?
 #mikrokassett
 #minidisk (MD)
@@ -215,13 +215,77 @@
 #MPEG-1 layer 3
 #QIC
 #S-VHS (ADAT)
-#SACD
 #single/7” ?
 #Stereo8
 #stålband
 #Tefifon
 #Wave
 #WMA
+#hårddisk
+#video_1 tum A
+#video_1 tum A (VPR1)
+#video_1 tum B
+#video_1 tum B LP
+#video_1 tum C
+#video_1/2 tum Shibaden
+#video_1/2 tum Sony AV (EIAJ Type 1)
+#video_1/2 tum Sony CV
+#video_1/4 tum AKAI
+#film_16 mm film
+#video_2 tum Quad
+#film_35 mm film 
+#_film_8 mm film
+#ASF videofil
+#Betacam 
+#Betacam SX 
+#BetacamSP
+#Blu-ray 3D
+#Blu-ray BD-R (video+mult)
+#Blu-ray BD-RE (video+mult)
+#CED videoformat i MARC21 ej i SMDB
+#D-VHS 
+#D1 (Sony)
+#D2 (Sony)
+#D3 (Panasonic)
+#D5 (Panasonic)
+#D5-HD
+#D6  (VooDoo)
+#D9-HD
+#DCT (Ampex) 
+#digital 8
+#Digital Betacam
+#digital S (D9)
+#DV
+#DVCam
+#DVCPRO
+#DVCPRO100
+#DVCPRO50
+#EIAJ Type 2 ; 1/2 tum
+#EL3400 (Philips) ; 1 tum
+#EL3402 (Philips) ; 1 tum
+#HDVS ; 1 tum
+#Image
+#IVC ; 1 tum
+#LDL1000 (Philips) ; 1/2 tum
+#LDL1200 ; 1 tum
+#MII 
+#Mini DV
+#MPEG IMX videokassett
+#MPEG-1
+#MPEG-2
+#S-VHS
+#SVCD
+#Umatic HB 
+#Umatic LB
+#Umatic SP 
+#VCD
+#VCR
+#VCR 1500
+#VCR 1700
+#video2000
+#WMV
+#XDCAM
+
 
  #skos:exactMatch
  #skos:broadMatch
