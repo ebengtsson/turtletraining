@@ -7,6 +7,7 @@ prefix rdaco: <http://rdaregistry.info/termList/RDAContentType/>
 prefix rdamt: <http://rdaregistry.info/termList/RDAMediaType/>
 prefix rdact: <http://rdaregistry.info/termList/RDACarrierType/>
 prefix rdau: <http://rdaregistry.info/Elements/u/>
+prefix rdaill: <http://rdaregistry.info/termList/IllusContent/>
 prefix lcrel: <http://id.loc.gov/vocabulary/relators/>
 prefix lclang: <http://id.loc.gov/vocabulary/languages/>
 prefix kbmarc: <http:id.kb.se/marc/>
@@ -72,10 +73,10 @@ prefix id: <http:id.kb.se/>
 
  </instance/alice-i-underlandet-bonniers-1966> a bf:Print ;
  bf:title [a bf:InstanceTitle ;
-            bf:mainTitle "Alice i underlandet" ;
-            bf:responsibilityStatement "av Lewis Carroll ; i översättning av 
-            Åke Runnquist ; med illustrationer av Tove Jansson" 
+            bf:mainTitle "Alice i underlandet"
          ] ;
+ bf:responsibilityStatement """av Lewis Carroll ; i översättning av 
+            Åke Runnquist ; med illustrationer av Tove Jansson""" ;
  bf:provisionActivity [a bf:Publication ;
              bf:agent </organization/albert-bonniers-forlag> ;
              bf:role lcrel:pbl 
@@ -85,7 +86,8 @@ prefix id: <http:id.kb.se/>
              bf:role lcrel:prt
              ] ;
  bf:copyrightDate "1966"^^xsd:gYear ;
- bf:illustrativeContent </work/illustrationer-till-alice-i-underlandet-tove-jansson> ;
+ bf:illustrativeContent  rdaill:1014 ;
+ bf:instanceOf </work/illustrationer-till-alice-i-underlandet-tove-jansson> ;
  bf:instanceOf </work/alice-i-underlandet-runnquist> .
 
 
@@ -137,10 +139,10 @@ prefix id: <http:id.kb.se/>
 
 </instance/alice-in-wonderland-disney-1951> a bf:Instance ;
   bf:title [a bf:InstanceTitle ;
-            bf:mainTitle "Walt Disney's Alice in Wonderland" ;
-            bf:responsibilityStatement "directors Clyde Geronimi, 
-            Hamilton Luske, Wilfred Jackson"
+            bf:mainTitle "Walt Disney's Alice in Wonderland" 
          ] ;
+  bf:responsibilityStatement """directors Clyde Geronimi, 
+            Hamilton Luske, Wilfred Jackson""" ;
 
   bf:provisionActivity [a bf:Distribution ; 
              bf:agent </organization/warner-brothers> ;
@@ -168,10 +170,10 @@ bf:projectionChracteristic [ a bf:PresentationFormat ;
 
 </instance/alice-in-wonderland-disney-1951-vhs> a bf:Instance ;
   bf:title [a bf:InstanceTitle ;
-            bf:mainTitle "Walt Disney's Alice in Wonderland" ;
-            bf:responsibilityStatement "directors Clyde Geronimi, 
-            Hamilton Luske, Wilfred Jackson"
+            bf:mainTitle "Walt Disney's Alice in Wonderland" 
          ] ;
+  bf:responsibilityStatement """directors Clyde Geronimi, 
+            Hamilton Luske, Wilfred Jackson""" ;
   bf:provisionActivity [a bf:Manufacture ; 
              bf:agent </organization/warner-home-video> ;
              bf:role lcrel:mfr ;
@@ -195,10 +197,10 @@ bf:projectionChracteristic [ a bf:PresentationFormat ;
 
 </instance/alice-in-wonderland-disney-1951-dvd> a bf:Instance ;
   bf:title [a bf:InstanceTitle ;
-            bf:mainTitle "Walt Disney's Alice in Wonderland" ;
-            bf:responsibilityStatement "directors Clyde Geronimi, 
-            Hamilton Luske, Wilfred Jackson"
+            bf:mainTitle "Walt Disney's Alice in Wonderland" 
          ] ;
+  bf:responsibilityStatement """directors Clyde Geronimi, Hamilton Luske, 
+           Wilfred Jackson""" ;
   bf:provisionActivity [a bf:Manufacture ; 
              bf:agent </organization/warner-home-video> ;
              bf:role lcrel:mfr ;
@@ -266,9 +268,10 @@ bf:projectionChracteristic [ a bf:PresentationFormat ;
 </instance/alice-in-wonderland-sheetmusic-1951> a bf:Print ;
   bf:title [a bf:InstanceTitle ;
             bf:mainTitle "Walt Disney's Alice in Wonderland" ;
-            bf:partTitle "vocal selections" ;
-            bf:responsibilityStatement "Sammy Fain, Oliver Wallace"
+            bf:partTitle "vocal selections" 
          ] ;
+  bf:responsibilityStatement "Sammy Fain, Oliver Wallace" ;
+
  bf:provisionActivity [a bf:Publication ;
              bf:agent </organization/walt-disney-productions> ;
              bf:role lcrel:pbl 
@@ -331,9 +334,9 @@ bf:contribution [ a bf:Contribution ;
 </instance/walt-disneys-alice-in-wonderland-LP-1959> a bf:Instance ;
   bf:title [a bf:InstanceTitle ;
             bf:mainTitle "Walt Disney's Alice in Wonderland" ;
-            bf:subTitle "all the music from the motion picture score" ;
-            bf:responsibilityStatement "Camarata Chorus and Orchestra" 
+            bf:subTitle "all the music from the motion picture score" 
          ] ;
+  bf:responsibilityStatement "Camarata Chorus and Orchestra" ;
  
   bf:provisionActivity [a bf:Publication ;
              bf:agent </organization/walt-disney-productions> ;
