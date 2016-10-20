@@ -189,7 +189,11 @@ bf:projectionChracteristic [ a bf:PresentationFormat ;
    bf:carrier kbx:VHS ;   
    bf:language lclang:eng, lclang:swe ;
    bf:note "innehåller två versioner av filmen, en textad och en dubbad"@sv ;
-   bf:instanceOf </work/alice-in-wonderland-disney-1951> ;
+   #serie
+   bf:seriesOf </work/series_waltDisneyKlassiker> ;
+   bf:seriesEnumeration "13" ;
+
+bf:instanceOf </work/alice-in-wonderland-disney-1951> ;
    bf:otherPhysicalFormat </instance/alice-in-wonderland-disney-1951-dvd> .
 
 #NYTT
@@ -353,8 +357,8 @@ bf:contribution [ a bf:Contribution ;
   bf:instanceOf </work/alice-in-wonderland-filmmusic-1951>, 
     </work/walt-disneys-alice-in-wonderland-LP-1959-cover> .
 
-
-   
+#work seriepost </work/series_waltDisneyKlassiker> 
+   </work/series_waltDisneyKlassiker> a kbx:Serial .
                                          
 
 </person/åke-runnquist> a bf:Person .
