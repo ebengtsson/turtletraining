@@ -28,6 +28,11 @@
  skos:exactMatch smdbc:analogSkiva ;
  skos:prefLabel "analog skiva"@sv .
 
+ :audio_laserdisc a bf:Carrier ;
+ skos:broadMatch rdact:1004 ; #"audio disc"@en
+ skos:exactMatch smdbc:ljud_laserdisc ;
+ skos:prefLabel "laserdisc"@sv .
+
  :audio_cdAudio a bf:Carrier ;
  skos:broadMatch rdact:1004 ; #"audio disc"@en
  skos:exactMatch smdbc:ljud_CD-Audio ;
@@ -40,6 +45,16 @@
  skos:exactMatch smdbc:ljud_CD ;
  skos:prefLabel "CD"@sv .
  #funkar prefLabel? 
+
+ :audio_dvdVideo a bf:Carrier ;
+ skos:broadMatch rdact:1004 ; #"audiodisc"@en
+ skos:exactMatch smdbc:ljud_DVD-video ;
+ skos:prefLabel "DVD-video"@sv .
+
+ :dvdAudio a bf:Carrier ;
+ skos:broadMatch rdact:1004 ; #"audio disc"@en
+ skos:exactMatch smdbc:ljud_DVD-audio ;
+ skos:prefLabel "DVD-audio"@sv .
 
  :kompaktkassett a bf:Carrier ;
  skos:broadMatch rdact:1007 ; #"audiocassette"@en
@@ -57,12 +72,17 @@
  skos:prefLabel "Betamax"@sv .
  #även video
 
- :tefifon a bf:Carrier ;
+ :audio_umatic a bf:Carrier ;
+ skos:broadMatch rdact:1007 ; #"audiocassette"@en
+ skos:exactMatch smdbc:ljud_Umatic ;
+ skos:prefLabel "Umatic"@sv .
+ #även video
+
+:tefifon a bf:Carrier ;
  skos:broadMatch rdact:1007 ; #"audiocassette"@en
  skos:exactMatch smdbc:Tefifon ;
  skos:prefLabel "Tefifon"@sv .
  #mekanisk lagring
-
 
  :cylinder a bf:Carrier ;
  skos:exactMatch rdact:1003 ; #"audio cylinder"@en
@@ -99,8 +119,6 @@
 
 
 
-
-
 #multimedia
  :computer_cd a bf:Carrier ;
  skos:broadMatch rdact:1013 ; #"computer disc"@en
@@ -108,18 +126,75 @@
  skos:prefLabel "CD"@sv .
  #jfr audio_cd ovan
 
+ :computer_dvdVideo a bf:Carrier ;
+ skos:broadMatch rdact:1013 ; #"computer disc"@en
+ skos:exactMatch smdbc:multimedier_DVD-video ;
+ skos:prefLabel "DVD-video"@sv .
 
-#video
- :video_cd a bf:Carrier ;
+#video 
+:video_cd a bf:Carrier ;
  skos:broadMatch rdact:1060 ; #"videodisc"@en
  skos:exactMatch smdbc:video_CD ;
  skos:prefLabel "CD"@sv .
  #jfr audio_cd ovan
 
+ :video_dvdVideo a bf:Carrier ;
+ skos:broadMatch rdact:1060 ; #"videodisc"@en
+ skos:exactMatch smdbc:video_DVD-video ;
+ skos:prefLabel "DVD-video"@sv .
+ #kan även vara ljud-DVD-video och multimedier-DVD-video
+
+ :video_laserdisc a bf:Carrier ;
+ skos:broadMatch rdact:1060 ; #"video disc"@en
+ skos:exactMatch smdbc:video_laserdisc ;
+ skos:prefLabel "laserdisc"@sv .
+
  :video_betamax a bf:Carrier ;
  skos:broadMatch rdact:1052 ; #"videocassette"@en
- skos:exactMatch smdbc:video_Betamax ;
+ skos:exactMatch smdbc:video_betamax ;
  skos:prefLabel "Betamax"@sv .
+
+ :video_umatic a bf:Carrier ;
+ skos:broadMatch rdact:1052 ; #"videocassette"@en
+ skos:exactMatch smdbc:video_umatic ;
+ skos:prefLabel "Umatic"@sv .
+ #även ljud
+
+ :video_umaticHb a bf:Carrier ;
+ skos:broadMatch rdact:1052 ; #"videocassette"@en
+ skos:exactMatch smdbc:video_umaticHb ;
+ skos:prefLabel "Umatic HB"@sv .
+
+ :video_umaticLb a bf:Carrier ;
+ skos:broadMatch rdact:1052 ; #"videocassette"@en
+ skos:exactMatch smdbc:video_umaticLb ;
+ skos:prefLabel "Umatic LB"@sv .
+
+ :video_umaticSp a bf:Carrier ;
+ skos:broadMatch rdact:1052 ; #"videocassette"@en
+ skos:exactMatch smdbc:video_umaticSp ;
+ skos:prefLabel "Umatic SP"@sv .
+
+
+
+ :1tumB a bf:Carrier ;
+ skos:broadMatch rdact:1053 ; #"videotape reel"@en
+ skos:exactMatch smdbc:1tumB ;
+ skos:prefLabel "1 tum B"@sv .
+
+ :1tumBlP a bf:Carrier ;
+ skos:broadMatch rdact:1053 ; #"videotape reel"@en
+ skos:exactMatch smdbc:1tumBlP ;
+ skos:prefLabel "1 tum B LP"@sv .
+
+ :asf a bf:Carrier ;
+ skos:relatedMatch rdact:1018 ; #"online resource"@en
+ bf:digitalCharacteristic [a bf:FileType ;
+                   rdfs:label "video file" ] ;
+ skos:exactMatch smdbc:ASF ;
+ skos:prefLabel "ASF"@sv .
+ #jfr AIFF
+
 
 #film
  :35mm a bf:Carrier ;
@@ -127,13 +202,11 @@
  skos:exactMatch smdbc:35mm ;
  skos:prefLabel "35 mm"@sv .
 
-#film
  :16mm a bf:Carrier ;
  skos:broadMatch rdact:1034 ; #"film reel"@en
  skos:exactMatch smdbc:35mm ;
  skos:prefLabel "16 mm"@sv .
 
-#film
  :8mm a bf:Carrier ;
  skos:broadMatch rdact:1034 ; #"film reel"@en
  skos:exactMatch smdbc:35mm ;
@@ -177,28 +250,9 @@
  skos:exactMatch smdbc:stillbild_DVD ;
  skos:prefLabel "DVD"@sv .
 
-#DVD-video---------
- :video_dvdVideo a bf:Carrier ;
- skos:broadMatch rdact:1060 ; #"videodisc"@en
- skos:exactMatch smdbc:video_DVD-video ;
- skos:prefLabel "DVD-video"@sv .
- #kan även vara ljud-DVD-video och multimedier-DVD-video
-
- :computer_dvdVideo a bf:Carrier ;
- skos:broadMatch rdact:1013 ; #"computer disc"@en
- skos:exactMatch smdbc:multimedier_DVD-video ;
- skos:prefLabel "DVD-video"@sv .
-
- :audio_dvdVideo a bf:Carrier ;
- skos:broadMatch rdact:1004 ; #"audiodisc"@en
- skos:exactMatch smdbc:ljud_DVD-video ;
- skos:prefLabel "DVD-video"@sv .
  
 #--------------
- :dvdAudio a bf:Carrier ;
- skos:broadMatch rdact:1004 ; #"audio disc"@en
- skos:exactMatch smdbc:ljud_DVD-audio ;
- skos:prefLabel "DVD-audio"@sv .
+
  
 
  :audio_bluRayDisc a bf:Carrier ;
@@ -232,12 +286,10 @@
 #diskett2.8tum
 #diskett5.1_4tum
 #hi8
-#laserdisc ljud+video
 #mpeg4
 #quicktime
 #realMedia
 #wmf
-#umatic
 #umd - skivaoptiskdigital
 #vhs
 #vhsEp
@@ -274,15 +326,13 @@
 #hårddisk
 #video_1 tum A
 #video_1 tum A (VPR1)
-#video_1 tum B
-#video_1 tum B LP
 #video_1 tum C
 #video_1/2 tum Shibaden
 #video_1/2 tum Sony AV (EIAJ Type 1)
 #video_1/2 tum Sony CV
 #video_1/4 tum AKAI
 #video_2 tum Quad
-#ASF videofil
+
 #Betacam 
 #Betacam SX 
 #BetacamSP
@@ -322,9 +372,6 @@
 #MPEG-2
 #S-VHS
 #SVCD
-#Umatic HB 
-#Umatic LB
-#Umatic SP 
 #VCD
 #VCR
 #VCR 1500
