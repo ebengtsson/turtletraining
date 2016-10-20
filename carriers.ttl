@@ -1,5 +1,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdact: <http://rdaregistry.info/termList/RDACarrierType/> .
 @prefix smdbc: <https://id.kb.se/vocab/smdb/carriers/> .
 @prefix : <https://id.kb.se/vocab/x/> .
@@ -50,6 +51,19 @@
  skos:exactMatch smdbc:DAT ;
  skos:prefLabel "DAT"@sv .
 
+ :audio_betamax a bf:Carrier ;
+ skos:broadMatch rdact:1007 ; #"audiocassette"@en
+ skos:exactMatch smdbc:ljud_Betamax ;
+ skos:prefLabel "Betamax"@sv .
+ #även video
+
+ :tefifon a bf:Carrier ;
+ skos:broadMatch rdact:1007 ; #"audiocassette"@en
+ skos:exactMatch smdbc:Tefifon ;
+ skos:prefLabel "Tefifon"@sv .
+ #mekanisk lagring
+
+
  :cylinder a bf:Carrier ;
  skos:exactMatch rdact:1003 ; #"audio cylinder"@en
  skos:exactMatch smdbc:cylinder ;
@@ -72,12 +86,18 @@
 #kolla benämning
 
  :aiff a bf:Carrier ;
- skos:related rdact:1018 ; #"online resource"@en
- #skos:related är fel, men jag tog det bara för att skriva något
+ skos:relatedMatch rdact:1018 ; #"online resource"@en
+ #skos:related (alt relatedMatch) är fel, men jag tog det bara för att skriva något
  #jfr https://www.w3.org/TR/2009/NOTE-skos-primer-20090818/#secassociative
- #helst skulle jag vilja precisera och tala om att det är en ljudfil
+ bf:digitalCharacteristic [a bf:FileType ;
+                   rdfs:label "audio file" 
+             ] ;
+ #helst skulle jag precisera och tala om att det är en ljudfil, men det kanske inte går att göra här
  skos:exactMatch smdbc:AIFF  ;
  skos:prefLabel "AIFF"@sv .
+
+
+
 
 
 
@@ -95,6 +115,29 @@
  skos:exactMatch smdbc:video_CD ;
  skos:prefLabel "CD"@sv .
  #jfr audio_cd ovan
+
+ :video_betamax a bf:Carrier ;
+ skos:broadMatch rdact:1052 ; #"videocassette"@en
+ skos:exactMatch smdbc:video_Betamax ;
+ skos:prefLabel "Betamax"@sv .
+
+#film
+ :35mm a bf:Carrier ;
+ skos:broadMatch rdact:1034 ; #"film reel"@en
+ skos:exactMatch smdbc:35mm ;
+ skos:prefLabel "35 mm"@sv .
+
+#film
+ :16mm a bf:Carrier ;
+ skos:broadMatch rdact:1034 ; #"film reel"@en
+ skos:exactMatch smdbc:35mm ;
+ skos:prefLabel "16 mm"@sv .
+
+#film
+ :8mm a bf:Carrier ;
+ skos:broadMatch rdact:1034 ; #"film reel"@en
+ skos:exactMatch smdbc:35mm ;
+ skos:prefLabel "8 mm"@sv .
 
 #text
  :text_cd a bf:Carrier ;
@@ -174,16 +217,6 @@
  skos:prefLabel "Blu-ray Disc (BD)"@sv .
 
 
-:audio_betamax a bf:Carrier ;
- skos:broadMatch rdact:1007 ;
- #"audiocassette" @en
- skos:exactMatch smdbc:ljud_Betamax .
-
-
- :video_betamax a bf:Carrier ;
- skos:broadMatch rdact:1052 ;
- #"videocassette" @en
- skos:exactMatch smdbc:video_Betamax .
 
 
 
@@ -193,7 +226,7 @@
 #CD-I (multimedier)
 #:usb
 #:remoteAcess
-#dDVD-RAM
+#DVD-RAM
 #HD DVD
 #diskett3.1_2tum
 #diskett2.8tum
@@ -235,8 +268,7 @@
 #S-VHS (ADAT)
 #single/7” ?
 #Stereo8
-#stålband
-#Tefifon
+#
 #Wave
 #WMA
 #hårddisk
@@ -249,10 +281,7 @@
 #video_1/2 tum Sony AV (EIAJ Type 1)
 #video_1/2 tum Sony CV
 #video_1/4 tum AKAI
-#film_16 mm film
 #video_2 tum Quad
-#film_35 mm film 
-#_film_8 mm film
 #ASF videofil
 #Betacam 
 #Betacam SX 
@@ -308,3 +337,4 @@
  #skos:exactMatch
  #skos:broadMatch
  #skos:narrowMatch
+ #skos:relatedMatch
