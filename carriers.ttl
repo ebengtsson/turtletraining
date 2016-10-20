@@ -56,7 +56,12 @@
  skos:exactMatch smdbc:ljud_DVD-audio ;
  skos:prefLabel "DVD-audio"@sv .
 
- :kompaktkassett a bf:Carrier ;
+ :audio_umd a bf:Carrier ;
+ skos:broadMatch rdact:1004 ; #"audio disc"@en
+ skos:exactMatch smdbc:audio_umd ;
+ skos:prefLabel "UMD"@sv .
+
+:kompaktkassett a bf:Carrier ;
  skos:broadMatch rdact:1007 ; #"audiocassette"@en
  skos:exactMatch smdbc:kompaktkassett ;
  skos:prefLabel "kompaktkassett"@sv .
@@ -131,6 +136,11 @@
  skos:exactMatch smdbc:multimedier_DVD-video ;
  skos:prefLabel "DVD-video"@sv .
 
+ :computer_umd a bf:Carrier ;
+ skos:broadMatch rdact:1013 ; #"computer disc"@en
+ skos:exactMatch smdbc:computer_umd ;
+ skos:prefLabel "UMD"@sv .
+
 #video 
 :video_cd a bf:Carrier ;
  skos:broadMatch rdact:1060 ; #"videodisc"@en
@@ -148,6 +158,12 @@
  skos:broadMatch rdact:1060 ; #"video disc"@en
  skos:exactMatch smdbc:video_laserdisc ;
  skos:prefLabel "laserdisc"@sv .
+
+ :video_umd a bf:Carrier ;
+ skos:broadMatch rdact:1060 ; #"video disc"@en
+ skos:exactMatch smdbc:video_umd ;
+ skos:prefLabel "UMD"@sv .
+ #umd - optisk - även multimedier och audio
 
  :video_betamax a bf:Carrier ;
  skos:broadMatch rdact:1052 ; #"videocassette"@en
@@ -290,7 +306,7 @@
 #quicktime
 #realMedia
 #wmf
-#umd - skivaoptiskdigital
+
 #vhs
 #vhsEp
 #vhsLp
@@ -320,7 +336,6 @@
 #S-VHS (ADAT)
 #single/7” ?
 #Stereo8
-#
 #Wave
 #WMA
 #hårddisk
@@ -332,7 +347,6 @@
 #video_1/2 tum Sony CV
 #video_1/4 tum AKAI
 #video_2 tum Quad
-
 #Betacam 
 #Betacam SX 
 #BetacamSP
