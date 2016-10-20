@@ -4,156 +4,174 @@
 @prefix smdbc: <https://id.kb.se/vocab/smdb/carriers/> .
 @prefix : <https://id.kb.se/vocab/x/> .
 
+
+#audio 
+
  :lp a bf:Carrier ;
- skos:broadMatch rdact:1004 ;
- #"audio disc" @en
- skos:exactMatch smdbc:LP .
+ skos:broadMatch rdact:1004 ; #"audio disc"@en
+ skos:exactMatch smdbc:LP ;
+ skos:prefLabel "LP"@sv .
 
  :78 a bf:Carrier ;
- skos:broadMatch rdact:1004 ;
- #"audio disc" @en
- skos:exactMatch smdbc:78varvsSkiva .
+ skos:broadMatch rdact:1004 ; #"audio disc"@en
+ skos:exactMatch smdbc:78varvsSkiva ;
+ skos:prefLabel "78-varvsskiva"@sv .
 
  :ep a bf:Carrier ;
- skos:broadMatch rdact:1004 ;
- #"audio disc" @en
- skos:exactMatch smdbc:EP .
+ skos:broadMatch rdact:1004 ; #"audio disc"@en
+ skos:exactMatch smdbc:EP ;
+ skos:prefLabel "EP"@sv .
 
  :analogDisc a bf:Carrier ;
- skos:broadMatch rdact:1004 ;
- #"audio disc" @en
- skos:exactMatch smdbc:analogSkiva .
+ skos:broadMatch rdact:1004 ; #"audio disc"@en
+ skos:exactMatch smdbc:analogSkiva ;
+ skos:prefLabel "analog skiva"@sv .
+
+ :audio_cdAudio a bf:Carrier ;
+ skos:broadMatch rdact:1004 ; #"audio disc"@en
+ skos:exactMatch smdbc:ljud_CD-Audio ;
+ skos:prefLabel "CD-A"@sv .
+ #Audio anges inte f.n. i SMDB trots att möjligheten finns
+ #kolla rätt beteckning CD-DA
+ 
+ :audio_cd a bf:Carrier ;
+ skos:broadMatch rdact:1004 ; #"audio disc"@en
+ skos:exactMatch smdbc:ljud_CD ;
+ skos:prefLabel "CD"@sv .
+ #funkar prefLabel? 
 
  :kompaktkassett a bf:Carrier ;
- skos:broadMatch rdact:1007 ;
- #"audiocassette" @en
- skos:exactMatch smdbc:kompaktkassett .
-
- :cylinder a bf:Carrier ;
- skos:exactMatch rdact:1003 ;
- #"audio cylinder" @en
- skos:exactMatch smdbc:cylinder .
-
- :cylinderCeleste a bf:Carrier ;
- skos:broadMatch rdact:1003 ;
- #"audio cylinder" @en
- skos:exactMatch smdbc:Celeste .
-
- :soundWire a bf:Carrier ;
- skos:exactMatch rdact:1071 ;
- #"audio wire reel" @en
- skos:exactMatch smdbc:ljudtråd .
+ skos:broadMatch rdact:1007 ; #"audiocassette"@en
+ skos:exactMatch smdbc:kompaktkassett ;
+ skos:prefLabel "kompaktkassett"@sv .
 
  :dat a bf:carrier ;
- skos:broadMatch rdact:1007 ;
- #"audiocassette"
- skos:exactMatch smdbc:DAT .
+ skos:broadMatch rdact:1007 ; #"audiocassette"@en
+ skos:exactMatch smdbc:DAT ;
+ skos:prefLabel "DAT"@sv .
+
+ :cylinder a bf:Carrier ;
+ skos:exactMatch rdact:1003 ; #"audio cylinder"@en
+ skos:exactMatch smdbc:cylinder ;
+ skos:prefLabel "cylinder"@sv .
+
+ :cylinderCeleste a bf:Carrier ; 
+ skos:broadMatch rdact:1003 ; #"audio cylinder"@en
+ skos:exactMatch smdbc:celeste ;
+ skos:prefLabel "celeste"@sv .
+
+ :soundThread a bf:Carrier ;
+ skos:exactMatch rdact:1071 ; #"audio wire reel"@en
+ skos:exactMatch smdbc:tråd ;
+ skos:prefLabel "tråd"@sv .
+
+ :steelWire a bf:Carrier ;
+ skos:exactMatch rdact:1071 ; #"audio wire reel"@en
+ skos:exactMatch smdbc:stålband ;
+ skos:prefLabel "stålband"@sv .
+#kolla benämning
 
  :aiff a bf:Carrier ;
- skos:related rdact:1018 ;
- #"online resource" @en
+ skos:related rdact:1018 ; #"online resource"@en
  #skos:related är fel, men jag tog det bara för att skriva något
  #jfr https://www.w3.org/TR/2009/NOTE-skos-primer-20090818/#secassociative
  #helst skulle jag vilja precisera och tala om att det är en ljudfil
- skos:exactMatch smdbc:AIFF .
-
-:audio_cdAudio a bf:Carrier ;
- skos:broadMatch rdact:1004 ;
- #"audio disc" @en
- skos:exactMatch smdbc:ljud_CD-Audio .
- #Audio anges inte f.n. i SMDB trots att möjligheten finns
- 
- :audio_cd a bf:Carrier ;
- skos:broadMatch rdact:1004 ;
- #"audio disc" @en
-  skos:exactMatch smdbc:ljud_CD .
+ skos:exactMatch smdbc:AIFF  ;
+ skos:prefLabel "AIFF"@sv .
 
 
-#
+
+#multimedia
  :computer_cd a bf:Carrier ;
- skos:broadMatch rdact:1013 ;
- #"computer disc" @en
-  skos:exactMatch smdbc:multimedier_CD .
+ skos:broadMatch rdact:1013 ; #"computer disc"@en
+ skos:exactMatch smdbc:multimedier_CD ;
+ skos:prefLabel "CD"@sv .
+ #jfr audio_cd ovan
 
 
-#
+#video
  :video_cd a bf:Carrier ;
- skos:broadMatch rdact:1060 ;
- #"videodisc" @en
- skos:exactMatch smdbc:video_CD .
+ skos:broadMatch rdact:1060 ; #"videodisc"@en
+ skos:exactMatch smdbc:video_CD ;
+ skos:prefLabel "CD"@sv .
+ #jfr audio_cd ovan
 
+#text
  :text_cd a bf:Carrier ;
- skos:broadMatch rdact:1013 ;
- #"computer disc" @en
- skos:exactMatch smdbc:text_CD .
+ skos:broadMatch rdact:1013 ; #"computer disc"@en
+ skos:exactMatch smdbc:text_CD;
+ skos:prefLabel "CD"@sv .
 
+#stillimage
  :stillimage_cd a bf:Carrier ;
- skos:broadMatch rdact:1013 ;
- #"computer disc" @en
- skos:exactMatch smdbc:stillbild_CD .
+ skos:broadMatch rdact:1013 ; #"computer disc"@en
+ skos:exactMatch smdbc:stillbild_CD ;
+ skos:prefLabel "CD"@sv .
 
+#DVD----------------------
  :audio_dvd a bf:Carrier ;
-  skos:broadMatch rdact:1004 ;
- #"audio disc" @en
- skos:exactMatch smdbc:ljud_DVD .
+ skos:broadMatch rdact:1004 ; #"audio disc"@en
+ skos:exactMatch smdbc:ljud_DVD ;
+ skos:prefLabel "DVD"@sv .
 
-  :computer_dvd a bf:Carrier ;
-  skos:broadMatch rdact:1013 ;
- #"computer disc" @en
- skos:exactMatch smdbc:multimedier_DVD .
+ :computer_dvd a bf:Carrier ;
+ skos:broadMatch rdact:1013 ; #"computer disc"@en
+ skos:exactMatch smdbc:multimedier_DVD ;
+ skos:prefLabel "DVD"@sv .
 
  :video_dvd a bf:Carrier ;
-  skos:broadMatch rdact:1060 ;
- #"videodisc" @en
- skos:exactMatch smdbc:video_DVD .
+ skos:broadMatch rdact:1060 ; #"videodisc"@en
+ skos:exactMatch smdbc:video_DVD  ;
+ skos:prefLabel "DVD"@sv .
 
  :text_dvd a bf:Carrier ;
- skos:broadMatch rdact:1013 ;
- #"computer disc" @en
- skos:exactMatch smdbc:text_DVD .
+ skos:broadMatch rdact:1013 ; #"computer disc"@en
+ skos:exactMatch smdbc:text_DVD ;
+ skos:prefLabel "DVD"@sv .
 
  :stillimage_dvd a bf:Carrier ;
- skos:broadMatch rdact:1013 ;
- #"computer disc" @en
- skos:exactMatch smdbc:stillbild_DVD .
+ skos:broadMatch rdact:1013 ; #"computer disc"@en
+ skos:exactMatch smdbc:stillbild_DVD ;
+ skos:prefLabel "DVD"@sv .
 
+#DVD-video---------
  :video_dvdVideo a bf:Carrier ;
-  skos:broadMatch rdact:1060 ;
- #"videodisc" @en
- skos:exactMatch smdbc:video_DVD-video .
+ skos:broadMatch rdact:1060 ; #"videodisc"@en
+ skos:exactMatch smdbc:video_DVD-video ;
+ skos:prefLabel "DVD-video"@sv .
  #kan även vara ljud-DVD-video och multimedier-DVD-video
 
  :computer_dvdVideo a bf:Carrier ;
-  skos:broadMatch rdact:1013 ;
- #"computer disc" @en
- skos:exactMatch smdbc:multimedier_DVD-video .
-
+ skos:broadMatch rdact:1013 ; #"computer disc"@en
+ skos:exactMatch smdbc:multimedier_DVD-video ;
+ skos:prefLabel "DVD-video"@sv .
 
  :audio_dvdVideo a bf:Carrier ;
-  skos:broadMatch rdact:1004 ;
- #"audiodisc" @en
- skos:exactMatch smdbc:ljud_DVD-video .
+ skos:broadMatch rdact:1004 ; #"audiodisc"@en
+ skos:exactMatch smdbc:ljud_DVD-video ;
+ skos:prefLabel "DVD-video"@sv .
  
+#--------------
  :dvdAudio a bf:Carrier ;
-  skos:broadMatch rdact:1004 ;
- #"audio disc" @en
- skos:exactMatch smdbc:ljud_DVD-audio .
+ skos:broadMatch rdact:1004 ; #"audio disc"@en
+ skos:exactMatch smdbc:ljud_DVD-audio ;
+ skos:prefLabel "DVD-audio"@sv .
  
 
  :audio_bluRayDisc a bf:Carrier ;
- skos:broadMatch rdact:1004 ;
- #"audio disc" @en
- skos:exactMatch smdbc:ljud_BluRayDisc .
+ skos:broadMatch rdact:1004 ; #"audio disc"@en
+ skos:exactMatch smdbc:ljud_BluRayDisc ;
+ skos:prefLabel "Blu-ray Disc (BD)"@sv .
 
  :computer_bluRayDisc a bf:Carrier ;
-  skos:broadMatch rdact:1013 ;
- #"computer disc" @en
- skos:exactMatch smdbc:multimedier_BluRayDisc .
+ skos:broadMatch rdact:1013 ; #"computer disc"@en
+ skos:exactMatch smdbc:multimedier_BluRayDisc ;
+ skos:prefLabel "Blu-ray Disc (BD)"@sv .
 
  :video_bluRayDisc a bf:Carrier ;
-  skos:broadMatch rdact:1060 ;
- #"videodisc" @en
- skos:exactMatch smdbc:video_BluRayDisc .
+ skos:broadMatch rdact:1060 ; #"videodisc"@en
+ skos:exactMatch smdbc:video_BluRayDisc ;
+ skos:prefLabel "Blu-ray Disc (BD)"@sv .
 
 
 :audio_betamax a bf:Carrier ;
