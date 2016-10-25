@@ -191,7 +191,7 @@ bf:projectionChracteristic [ a bf:PresentationFormat ;
    bf:note "innehåller två versioner av filmen, en textad och en dubbad"@sv ;
    #serie
    bf:seriesStatement [a kbx:Serial ;
-          bf:seriesOf </work/series_waltDisneyKlassiker> ;
+          bf:hasSeries </work/series_waltDisneyKlassiker> ;
           bf:seriesEnumeration "13" 
       ] ;
 bf:instanceOf </work/alice-in-wonderland-disney-1951> ;
