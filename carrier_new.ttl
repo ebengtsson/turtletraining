@@ -1,1 +1,57 @@
+@prefix bf2: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix kbv: <https://id.kb.se/vocab/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdacarrier: <http://rdaregistry.info/termList/RDACarrierType/> .
+@prefix rdamedia: <http://www.rdaregistry.info/termList/RDAMediaType/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
+@prefix : <https://id.kb.se/vocab/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdo: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+:VHS a kbv:CarrierType ;
+    rdfs:SubclassOf rdacarrier:1052 ; #"videocassette"@en
+    owl:sameAs kbv:HoldingVideoFormatType-b, kbv:VideoFormatType-b ;
+    [ a owl:intersectionOf?? kbv:MediaType "video", kbv:CarrierKindOfCarrier "cassette", 
+    	kbv:CarrierEncodingMethod "magnetic", kbv:CarrierEncodingType "analog", 
+    	kbv:CarrierDesignation "VHS" ] .
+
+kbv:CarrierKindOfCarrier rdfs:subClassOf kbv:CarrierType . 
+#[eg disc, cassette, cartridge, cylinder reel, roll, file...] 
+
+bf2:RecordingMedium rdfs:subClassOf kbv:CarrierEncodingMethod . 
+#kbv:CarrierEncodingMethod  [eg optic, magnetic, mechanic, magnetic-optic]
+ 
+bf2:RecordingMedium rdfs:subClassOf kbv:CarrierEncodingType .
+#kbv:CarrierEncodingType [eg analog, digital, electronic, "komprimerad", "linjär"]
+
+kbv:CarrierDesignation a rdfs:label .
+#kbv:CarrierDesignation alt kbv:CarrierLabel
+
+:LP a kbv:CarrierType ;
+    rdfs:SubclassOf rdacarrier:1004 ; #"audio disc"@en
+    [ a owl:intersectionOf?? kbv:MediaType "audio", kbv:CarrierKindOfCarrier "disc", 
+    	kbv:CarrierEncodingMethod "mechanic", kbv:CarrierEncodingType "analog", 
+    	kbv:CarrierDesignation "LP" ] .
+    	
+    	
+:CD a kbv:CarrierType ;
+    [ a owl:intersectionOf?? kbv:CarrierKindOfCarrier "disc", 
+    	kbv:CarrierEncodingMethod "optic", kbv:CarrierEncodingType "digital", 
+    	kbv:CarrierDesignation "CD" ] .
+
+:CD_audio a kbv:CarrierType ;
+    rdfs:SubclassOf rdacarrier:1004 "audio disc"@en ;
+    [ a owl:intersectionOf?? kbv:MediaType "audio", kbv:CarrierType :CD, 
+    	kbv:CarrierDesignation "CD_audio" ] .
+    	
+:CD-Audio_audio a kbv:CarrierType ;
+    rdfs:SubclassOf rdacarrier:1004 "audio disc"@en ;
+    [ a owl:intersectionOf?? kbv:MediaType "audio", kbv:CarrierType :CD, 
+    	kbv:CarrierDesignation "CD-Audio_audio" ] .
